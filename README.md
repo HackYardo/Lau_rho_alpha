@@ -10,4 +10,4 @@ typst watch xxx.typ  # autoly recompile on changes
 ```
 [demo](typst/aTinyTypstTutorial.pdf)
 # License
-[MIT](LICENSSE)
+[MIT](LICENSE)
