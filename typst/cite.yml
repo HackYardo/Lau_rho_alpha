@@ -1,0 +1,107 @@
+omarova-libra:
+    type: Article
+    author: ["Omarova, Saule", "Steele, Graham"]
+    title:
+        value: There’s a Lot We Still Don’t Know About Libra
+        sentence-case: There’s a lot we still don’t know about Libra
+    date: 2019-11-04
+    url: https://www.nytimes.com/2019/11/04/opinion/facebook-libra-cryptocurrency.html
+    parent:
+        type: Newspaper
+        title:
+            value: The New York Times
+            verbatim: true
+        location: "New York, NY, USA"
+
+science-e-issue:
+    type: Web
+    title: Tokenization of + and - with scientific notation
+    url: https://github.com/typst/typstc/issues/3
+    serial-number: 3
+    author:
+        - name: "Mädje"
+          given-name: "Laurenz"
+          alias: "laurmaedje"
+    date: 2020-07-18
+    parent:
+        type: Repository
+        title: Typst
+        url: https://github.com/typst/typst
+
+terminator-2:
+    type: Video
+    title: "Terminator 2: Judgment Day"
+    publisher: Carolco Pictures; Pacific Western Productions; Lightstorm Entertainment; Le Studio Canal+ S.A.
+    affiliated:
+        - role: director
+          names: Cameron, James
+        - role: cast-member
+          names: ["Schwarzenegger, Arnold", "Hamilton, Linda", "Patrick, Robert"]
+        - role: composer
+          names: Fiedel, Brad
+    date: 1991-07-01
+    runtime: "137:00"
+    time-range: "17:05-17:48"
+
+wire:
+    type: Video
+    title: The wire
+    date: 2002
+    publisher: Blown Deadline Productions
+    volume-total: 5
+    # From Wikipedia, the free encyclopedia: https://en.wikipedia.org/wiki/The_Wire
+    abstract: |
+        The Wire is an American crime drama television series created and
+        primarily written by American author and former police reporter David
+        Simon. The series was broadcast by the cable network HBO in the United
+        States. The Wire premiered on June 2, 2002, and ended on March 9, 2008,
+        comprising sixty episodes over five seasons. The idea for the show
+        started out as a police drama loosely based on the experiences of
+        Simon's writing partner Ed Burns, a former homicide detective and
+        public school teacher.
+    note: The Wire is noted to be solid
+    genre: Drama
+    affiliated:
+        - role: executive-producer
+          names: ["Simon, David", "Colesberry, Robert F.", "Noble, Nina Kostroff"]
+
+plaque:
+    type: Misc
+    title: Informational plaque about Jacoby's 1967 photos
+    publisher: Stiftung Reinbeckhallen
+    location: Berlin, Germany
+    date: 2020
+    parent:
+        type: Artwork
+        date: 1967
+        author: Jacoby, Max
+        parent:
+            type: Anthology
+            title: Bleibtreustraße
+            archive: Landesmuseum Koblenz
+            archive-location: Koblenz, Germany
+
+oiseau:
+    type: Exhibition
+    title: L'oiseau rare, de l'hirondelle au kakapo
+    date: 2020-12-18
+    organization: Musée des Confluences
+    location: Lyon, France
+    url:
+        value: https://www.museedesconfluences.fr/fr/evenements/l%E2%80%99oiseau-rare-de-l%E2%80%99hirondelle-au-kakapo
+        date: 2020-11-04
+
+un-hdr:
+    type: Report
+    author: United Nations Development Programme
+    title: Human Development Report 2019
+    location: New York
+    serial-number: { issn: 2412-3129 }
+    url: http://hdr.undp.org/sites/default/files/hdr2019.pdf
+    date: 2019
+
+foia:
+    type: Legislation
+    title: Freedom of Information Act
+    serial-number : Pub. L. No. 107-296, 80 Stat. 250
+    date: 1967
