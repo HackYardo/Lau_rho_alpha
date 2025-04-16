@@ -6,6 +6,7 @@
   date:auto)
 
 #set page(columns:2)
+#set par(justify:true)
 
 #place(top+center, float:true, scope:"parent",)[
 = Lauρα
@@ -13,7 +14,7 @@ _my personal library for the forgotten and the remembered_]
 
 #place(top+left, float:true, scope:"parent",)[
 == Choice
-Information is in constant need of composing and publishing. Popular ways are:
+ Information is in constant need of composing and publishing. Popular ways are:
 
 #let gray = 0%
 #let lvA(compose) = {table.cell(fill: blue.lighten(gray), compose)}
@@ -35,7 +36,7 @@ So I choose Typst. At my first glance, Typst, as a new open source PDF compiler 
 
 == E-Book, Manual, Dictionary
 Why not azw3, epub, mobi, chm, mdx?
-- They are pretty good but e-thing is virtual-thing. And PDF is the bridge connecting the e-world to real world.
+- They are pretty good but e-thing is virtual-thing. And PDF is the bridge connecting the e-world to the real world.
 
 == Personal Knowledge Manage System
 Why not a PKMS? 
@@ -44,3 +45,22 @@ Why not a PKMS?
 
 #outline()
 
+= Typst
+== PDF and LaTeX
+== Replace Markdowm
+== Four Modes: set, math, code, markup
+== Page Layout and Font Format
+== Edit Math Formula
+== Reserved Word, Funcrions, Package
+== US-Letter
+== API
+= Natural Language
+== Europe Language Rank[?]
+== English
+== Greek
+= 
+== Aerodynamics
+== Applied Mathematics
+== Artificial Intelligence
+== 
+= Computing
