@@ -1,0 +1,37 @@
+default = ["g", "k", "l"]
+
+[g]
+cmd = "gnugo --mode gtp"
+dir = ""
+
+[k]
+cmd = "./katago gtp"
+dir = "../KataGo/"
+
+[l]
+cmd = "leelaz --cpu-only -g -v 8 -w weight.gz"
+dir = "../LeelaZero/"
+
+[kVanilla]
+cmd = "./katago gtp -config default_gtp.cfg -model default_model.bin.gz"
+dir = "../KataGo/"
+
+[l20]
+cmd = "leelaz --cpu-only -g -v 8 -w w20.gz"
+dir = "../LeelaZero/"
+
+[ka20]
+cmd = "./katago gtp -config 8visits5seconds.cfg -model m20.bin.gz"
+dir = "../KataGo1.10.0AVX2/"
+
+[ke6]
+cmd = "./katago gtp -config v8t5.cfg -model m6.txt.gz"
+dir = "../KataGo1111Eigen/"
+
+[ko69c]
+cmd = "./katago gtp -override-config defaultBoardXSize=9,defaultBoardYSize=12"
+dir = "../KataGo1124OpenCL/"
+
+[K]
+cmd = "./katago gtp -config gtp.cfg -model model.txt.gz"
+dir = "../badukbots/"
