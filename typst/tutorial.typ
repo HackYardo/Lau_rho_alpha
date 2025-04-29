@@ -275,7 +275,7 @@ See @t-1 for more.
     - Bool: true, false
     - Ascii: 0.52em, relative size of font
 - Func align(_ways_, _things_)
-    - Ascii: center+bottom
+    - Ascii: center+bottom, left+horizon, start, end, right, top
     - Ascii or Block: ascii, [ascii, markup, \#image()]
 - Func lorem(_number_)
     - gen some placeholder text from Lorem Ipsum
