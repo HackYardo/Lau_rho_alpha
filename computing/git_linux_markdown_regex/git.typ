@@ -3,8 +3,8 @@
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
 
-= Keep Email Secret
-
+= Keep E-mail Secret
+` GitHub provides noreply e-mails that can be used in SSH keys or Git Commits. To get one: GitHub Setting => Emails => Keep my email email addresses private `
 = SSH to Identify
 + Generate a Key
 	```sh
