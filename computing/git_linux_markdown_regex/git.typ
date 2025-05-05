@@ -1,107 +1,120 @@
-#set page(columns:3, flipped:true)//height:21.0cm, width:29.7cm)
+#set page(
+	flipped:true,
+	columns:3,
+	header:[*02Git*: need Internet, GitHub account and Debian/Windows(WSL)/Android(Termux),\ need know the 3 Areas: Work(outside of Git), Add(buffer zone), Commit(push/fetch/merge/pull)])
 #set par(justify:true)
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
 
-= Keep E-mail Secret
-` GitHub provides noreply e-mails that can be used in SSH keys or Git Commits. To get one: GitHub Setting => Emails => Keep my email email addresses private `
+= Keep e-Mail Secret
+`GitHub provides noreply e-mails that can use in SSH or Git. To get one: Settings => Emails => Keep my email address private`
 = SSH to Identify
-+ Generate a Key
-	```sh
-	ssh-keygen -t ed25519 -C 'User@github.com'
-	> Generating public/private ALGORITHM key pair.
-	> Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM):[Press enter]
-	> Enter passphrase (empty for no passphrase): [Type a passphrase]
-	> Enter same passphrase again: [Type passphrase again]
-	```
-+ Add to Agent
-	```sh
-	eval "$(ssh-agent -s)"
-	> Agent pid 88888
-	ssh-add ~/.ssh/id_ed25519
-	```
-+ Add to GitHub
-	```sh
-	cat ~/.ssh/id_ed25519.pub
-	# copy to => GitHub Settings => SSH and GPG keys
-	```
-- Use a New Device
-	```sh
-	# copy ~/.ssh/ to the new device ~/
-	```
+```sh
+# Generate a (Key.pub, Key) Pair
+ssh-keygen -t ed25519 -C "e-Mail"
+> Generating public/private key pair ...
+# Give Agent the Key to Authenticate
+eval "$(ssh-agent -s)"
+> Agent pid 666666
+ssh-add ~/.ssh/id_ed25519
+# Give GitHub the Key.pub to Authorize
+cat ~/.ssh/id_ed25519.pub
+#   copy => Settings => SSH and GPG keys
+# Use the Same Key on a New Device
+#   give Agent of new Device the Key
+# Delete the Pair
+rm ~/.ssh/id_ed25519 
+rm ~/.ssh/id_ed25519.pub
+```
 = Git
 ```sh
 sudo apt install git-all
-git --version
-git -h
+git --version; git -h
+git Command -h  # e.g. git init -h
 ```
 == Config
 ```sh
-git config --global user.name=Name
-git config --global user.email=Email
-git config -l
-git config --global -l
+git config --global user.name 'Na Me'
+git config --global user.email e-Mail
+git config --global -l  # ~/.gitconfig
+git config -l #global + Repo/.git/config
 ```
-The Name and Email are for git commit. Any letters are valid, but be sure to #link("https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile#your-local-git-commit-email-isnt-connected-to-your-account")[inform] GitHub.
-== Init
+== New Repository and Initial Commit
 ```sh
-mkdir project
-cd project/
-touch readme.md
-nano readme.md
-# to quit nano: ctrl x => y => enter 
-git init
-git add -A
-git commit -m 'init commit'
-git status && git log
+git init -b main Repo && cd Repo/
+touch File && nano File
+# to quit nano: ctrl x => y => enter
+git status; git add File; git status
+git log; git commit -m 'Init'; git log
 ```
-== Local to Remote
+== Local and Remote
 ```sh
+# Local to Remote
 # create a new repo at GitHub, optional:
-#   readme, license or gitignore files
-git remote add origin git@github.com:User/Repo.git
-git remote -v
-git push
-git branch -a
-```
-== Remote to Local
-```sh
+#   readme, license or .gitignore files
+git remote add origin \
+  git@github.com:User/Repo.git
+git remote -v;
+git push -u; git branch -a
+# Remote to Local
 git clone git@github.com:User/Repo.git
-git pull
-git branch -a
 ```
 == Daily Use
 ```sh
-# edit File at local
-git rm File  # delete File
-git mv File_from File_to
-# move or rename
-git status && git diff
+# edit File at Local
+git status; git diff
 # when too long:
-#`space` to next page, `q` to quit
-git add -A
-git commit -m 'info'
-git status && git log -p -1
-git push
-git status && git log -3
-# edit File at remote
-git pull
+#   space/b to next/pre page, q to quit
+git add -u; git status
+git commit -m 'Info'
+git status; git log -p -1
+git push; git status; git log -3
+# edit File at Remote
+git fetch  # download not merge
+git pull  # download and merge
 ```
-== Aliases
+== #link("https://github.com/github/gitignore", text(blue, [Ignore])), Move, Delete
 ```sh
-git config --global alias.changelog 'log --date=short --pretty=format:"%h %ad %s"'
-git config --global alias.graph 'log --pretty="%h %s" --graph'
-git config --global alias.recent "diff --patch-with-stat 'HEAD~1...HEAD'"
-git config --gloabl alias.last 'log -p -1'
-git config --global alias.countline "diff --stat 'HEAD@{since.2005}'"
+/a.pdf  # ig a.pdf
+*.pdf  # ig all pdfs
+!b.pdf  # not ig b.pdf
+A/  # ig the whole A/ folder
+A/*.pdf  # ig all pdfs in A/ but A/B/
+A/**/*.pdf  # ig all pdfs in A/
+git mv File_from File_to  # move/rename
+git rm File  # delete
+```
+== Commit, Tag, Branch
+Undo, Modify, Delete, Merge, Emoji
+```sh
+git commit --amend
+```
+== Alias
+```sh
+git config --global alias.changelog \
+'log --pretty="%h %as %s"'
+git config --global alias.countline \
+"diff --stat 'HEAD@{since.2005}'"
+git config --global alias.recent \
+"diff --patch-with-stat 'HEAD~1...HEAD'"
+nano ~/.gitconfig
+[alias]
+	...
+  last = log -p -1
+  graph = log --pretty=\"%h %s\" --graph
 # to use a git alias, e.g.
 git changelog
 git changelog File
 ```
-== Branch
-== Commit: Undo, Modify, Delete, Merge, Emoji
+= SSH to Verify
++ Generate a Key, add to Agent;
++ And to GitHub *as a Sign Key*;
++ Enable Vigilant mode: Settings => SSH and GPG keys => Flag unsigned commits as unverified
++ Enable Sign in Git:
 ```sh
-git commit --amend
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+git config --global gpg.format ssh
+git config --global user.signingkey \
+  .ssh/Key.pub
 ```
-== Tagging
-== Fetch Pull
