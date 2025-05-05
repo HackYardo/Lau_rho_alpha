@@ -69,9 +69,10 @@ This file itself is the guide for the whole Lauρα Library. Every chapter would
 === Third Library
 = Markdown
 == Common Markdown
-== GitHub Favoured Markdown
+== GitHub Markup
 == Jupyter, Julia, Python, R
 myst.md(JupyterBook), reStructuredText(Sphinx), rMarkdown(Pandoc)
+== HTML
 = Programming Language
 == Define and Histroy
 == Example: Calculator
