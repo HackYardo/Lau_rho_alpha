@@ -35,9 +35,9 @@ Information is in constant need of composing and publishing. Popular ways are:
 
 So I choose Typst. At my first glance, Typst, as a new open source PDF compiler for rocket science, won't replace classic LaTeX in few years. Meanwhile, we really have to say goodbye to Markdown. ```typ /*As for JupyterBook, a interesting project that converts jupyter notebooks into pdf files, perhaps I can use Typst to implement some of its features such as callout, executable code block with line highlight and result output, cross-ref previews, etc.*/```
 
-== E-Book, Manual, Dictionary
-Why not azw3, epub, mobi, chm, mdx?
-- They are pretty good but e-thing is virtual-thing. And PDF is the bridge connecting the e-world to the real world.
+== e-Book, Manual, Dictionary
+Why not azw3, djyu, epub, mobi, chm, mdx?
+- They are pretty good but e-thing is virtual thing. And PDF is the bridge connecting the e-world to the real world.
 
 == Personal Knowledge Manage System
 Why not a PKMS? 
@@ -68,8 +68,8 @@ This file itself is the guide for the whole Lauρα Library. Every chapter would
 === Standard Library
 === Third Library
 = Markdown
-== Common Markdown
-== GitHub Markup
+== CommonMark
+== GitHub Markup, former GitHub Favoured Markdown
 == Jupyter, Julia, Python, R
 myst.md(JupyterBook), reStructuredText(Sphinx), rMarkdown(Pandoc)
 == HTML

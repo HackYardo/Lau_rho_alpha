@@ -1,7 +1,7 @@
 #set page(
 	flipped:true,
 	columns:3,
-	header:[*02Git*: need Internet, GitHub account and Debian/Windows(WSL)/Android(Termux),\ need know the 3 Areas: Work(outside of Git), Add(buffer zone), Commit(push/fetch/merge/pull)])
+	header:[You Need the 3 things: Internet, GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git), Add(buffer zone), Commit(log/push/fetch/merge/pull).])
 #set par(justify:true)
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
@@ -13,21 +13,20 @@
 # Generate a (Key.pub, Key) Pair
 ssh-keygen -t ed25519 -C "e-Mail"
 > Generating public/private key pair ...
-# Give Agent the Key to Authenticate
-eval "$(ssh-agent -s)"
-> Agent pid 666666
-ssh-add ~/.ssh/id_ed25519
 # Give GitHub the Key.pub to Authorize
 cat ~/.ssh/id_ed25519.pub
 #   copy => Settings => SSH and GPG keys
-# Use the Same Key on a New Device
-#   give Agent of new Device the Key
-# Delete the Pair
-rm ~/.ssh/id_ed25519 
-rm ~/.ssh/id_ed25519.pub
+# Use the Same Pair on a New Device
+#   archive to avoid permission too open
+tar cpf Archive ~/.ssh/
+#   give new Device by USB cable
+#   extract to ~/, then delete
+tar xpfC Archive ~/
+shred -u Archive
 ```
 = Git
 ```sh
+sudo apt update
 sudo apt install git-all
 git --version; git -h
 git Command -h  # e.g. git init -h
@@ -75,11 +74,11 @@ git pull  # download and merge
 ```
 == #link("https://github.com/github/gitignore", text(blue, [Ignore])), Move, Delete
 ```sh
-/a.pdf  # ig a.pdf
-*.pdf  # ig all pdfs
-!b.pdf  # not ig b.pdf
-A/  # ig the whole A/ folder
-A/*.pdf  # ig all pdfs in A/ but A/B/
+/a.pdf      # ig a.pdf
+*.pdf       # ig all pdfs
+!b.pdf      # not ig b.pdf
+A/          # ig the whole A/ folder
+A/*.pdf     # ig all pdfs in A/ but A/B/
 A/**/*.pdf  # ig all pdfs in A/
 git mv File_from File_to  # move/rename
 git rm File  # delete
@@ -107,10 +106,10 @@ git changelog
 git changelog File
 ```
 = SSH to Verify
-+ Generate a Key, add to Agent;
++ Generate a (Key.pub, Key) Pair;
 + And to GitHub *as a Sign Key*;
 + Enable Vigilant mode: Settings => SSH and GPG keys => Flag unsigned commits as unverified
-+ Enable Sign in Git:
++ Enable Commit/Tag Sign in Git:
 ```sh
 git config --global commit.gpgsign true
 git config --global tag.gpgsign true
