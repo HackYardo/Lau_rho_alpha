@@ -10,19 +10,19 @@
 `GitHub provides noreply e-mails that can use in SSH or Git. To get one: Settings => Emails => Keep my email address private`
 = SSH to Identify
 ```sh
-# Generate a (Key.pub, Key) Pair
+# generate a (KEY.pub, KEY) pair
 ssh-keygen -t ed25519 -C "e-Mail"
 > Generating public/private key pair ...
-# Give GitHub the Key.pub to Authorize
+# give GitHub the KEY.pub to authorize
 cat ~/.ssh/id_ed25519.pub
 #   copy => Settings => SSH and GPG keys
-# Use the Same Pair on a New Device
+# use the same pair on a new device
 #   archive to avoid permission too open
-tar cpf Archive ~/.ssh/
-#   give new Device by USB cable
+cd ~ && tar cpf Archive .ssh/
+#   give new device by USB cable
 #   extract to ~/, then delete
 tar xpfC Archive ~/
-shred -u Archive
+shred -u Archive  # better than `rm`
 ```
 = Git
 ```sh
@@ -48,19 +48,19 @@ git log; git commit -m 'Init'; git log
 ```
 == Local and Remote
 ```sh
-# Local to Remote
+# local to remote
 # create a new repo at GitHub, optional:
 #   readme, license or .gitignore files
 git remote add origin \
   git@github.com:User/Repo.git
 git remote -v;
-git push -u; git branch -a
-# Remote to Local
+git push -u; git branch -vva
+# remote to local
 git clone git@github.com:User/Repo.git
 ```
-== Daily Use
+== Daily Use, Branch, Merge
 ```sh
-# edit File at Local
+# edit File at local
 git status; git diff
 # when too long:
 #   space/b to next/pre page, q to quit
@@ -68,11 +68,17 @@ git add -u; git status
 git commit -m 'Info'
 git status; git log -p -1
 git push; git status; git log -3
-# edit File at Remote
+# edit File at remote
 git fetch  # download not merge
 git pull  # download and merge
+
+git branch issue10; git switch issue10
+# handle issue10 and commit
+git switch main && git merge issue10
+git branch -d issue10 # delete at local
+git push --delete issue10 # 
 ```
-== #link("https://github.com/github/gitignore", text(blue, [Ignore])), Move, Delete
+== #link("https://github.com/github/gitignore", text(blue, [Ignore])), Move, Delete, Check
 ```sh
 /a.pdf      # ig a.pdf
 *.pdf       # ig all pdfs
@@ -82,17 +88,21 @@ A/*.pdf     # ig all pdfs in A/ but A/B/
 A/**/*.pdf  # ig all pdfs in A/
 git mv File_from File_to  # move/rename
 git rm File  # delete
+git diff --check  # check whitespace err
 ```
-== Commit, Tag, Branch
-Undo, Modify, Delete, Merge, Emoji
+== Commit, Tag
 ```sh
-git commit --amend
+git commit --amend  # recommit promptly
+git tag v2.0 -m '' 0ac6 # tag commit0ac6
+git push --tags  # push all tags
+git tag -d v2.0  # delete tag at local
+git push --delete v2.0 # del at remote
 ```
 == Alias
 ```sh
 git config --global alias.changelog \
-'log --pretty="%h %as %s"'
-git config --global alias.countline \
+'log --pretty="%Cgreen%h %as %Creset%s"'
+git config --global alias.countdiff \
 "diff --stat 'HEAD@{since.2005}'"
 git config --global alias.recent \
 "diff --patch-with-stat 'HEAD~1...HEAD'"
@@ -106,14 +116,21 @@ git changelog
 git changelog File
 ```
 = SSH to Verify
-+ Generate a (Key.pub, Key) Pair;
-+ And to GitHub *as a Sign Key*;
-+ Enable Vigilant mode: Settings => SSH and GPG keys => Flag unsigned commits as unverified
-+ Enable Commit/Tag Sign in Git:
++ generate a (KEY.pub, KEY) pair;
++ add to GitHub *as a sign key*;
++ enable vigilant mode: Settings => SSH and GPG keys => Flag unsigned commits as unverified
++ enable commit/tag sign in Git (each line of signers is e-Mail KEY.pub):
 ```sh
-git config --global commit.gpgsign true
-git config --global tag.gpgsign true
-git config --global gpg.format ssh
-git config --global user.signingkey \
-  .ssh/Key.pub
+nano ~/.gitconfig
+[user]
+  ...
+  signingkey = .ssh/id_ed25519.pub
+[commit]
+  gpgsign = true
+[tag]
+  gpgSign = true
+[gpg]
+  format = ssh
+[gpg.ssh]
+  allowedSignersFile = .ssh/signers
 ```
