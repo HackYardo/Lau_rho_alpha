@@ -30,6 +30,7 @@ sudo apt update
 sudo apt install git-all
 git --version; git -h
 git Command -h  # e.g. git init -h
+# the first 100 pages of "Pro Git 2nd"
 ```
 == Config
 ```sh
@@ -58,45 +59,44 @@ git push -u; git branch -vva
 # remote to local
 git clone git@github.com:User/Repo.git
 ```
-== Daily Use, Branch, Merge
+== Daily Use
 ```sh
 # edit File at local
 git status; git diff
 # when too long:
 #   space/b to next/pre page, q to quit
 git add -u; git status
-git commit -m 'Info'
-git status; git log -p -1
+git commit -m 'Info'; git log -p -1
 git push; git status; git log -3
 # edit File at remote
 git fetch  # download not merge
 git pull  # download and merge
-
-git branch issue10; git switch issue10
-# handle issue10 and commit
-git switch main && git merge issue10
-git branch -d issue10 # delete at local
-git push --delete issue10 # 
 ```
-== #link("https://github.com/github/gitignore", text(blue, [Ignore])), Move, Delete, Check
+== Ignore, Delete, Move, Check
 ```sh
-/a.pdf      # ig a.pdf
-*.pdf       # ig all pdfs
-!b.pdf      # not ig b.pdf
-A/          # ig the whole A/ folder
-A/*.pdf     # ig all pdfs in A/ but A/B/
-A/**/*.pdf  # ig all pdfs in A/
+/a.pdf # ignore a.pdf by Repo/.gitignore
+*.pdf  # ig all pdfs
+!b.pdf     # not ig b.pdf
+A/         # ig the whole A/ folder
+A/*.pdf    # ig all pdfs in A/ but A/B/
+A/**/*.pdf # ig all pdfs in A/
+git rm \*~ # delete all files end with ~
 git mv File_from File_to  # move/rename
-git rm File  # delete
 git diff --check  # check whitespace err
 ```
-== Commit, Tag
+== Commit, Tag, Branch
 ```sh
 git commit --amend  # recommit promptly
 git tag v2.0 -m '' 0ac6 # tag commit0ac6
 git push --tags  # push all tags
 git tag -d v2.0  # delete tag at local
 git push --delete v2.0 # del at remote
+git branch issue10; git switch issue10
+git push -u issue10
+# handle issue10 and commit
+git switch main && git merge issue10
+git branch -d issue10
+git push --delete issue10
 ```
 == Alias
 ```sh
@@ -108,7 +108,6 @@ git config --global alias.recent \
 "diff --patch-with-stat 'HEAD~1...HEAD'"
 nano ~/.gitconfig
 [alias]
-	...
   last = log -p -1
   graph = log --pretty=\"%h %s\" --graph
 # to use a git alias, e.g.
