@@ -91,8 +91,8 @@ git tag v2.0 -m '' 0ac6 # tag commit0ac6
 git push --tags  # push all tags
 git tag -d v2.0  # delete tag at local
 git push --delete v2.0 # del at remote
-git branch issue10; git switch issue10
-git push -u issue10
+git branch issue10; git push -u issue10
+git switch issue10
 # handle issue10 and commit
 git switch main && git merge issue10
 git branch -d issue10
