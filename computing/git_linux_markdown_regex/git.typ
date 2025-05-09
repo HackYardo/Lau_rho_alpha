@@ -114,6 +114,24 @@ nano ~/.gitconfig
 git changelog
 git changelog File
 ```
+== Commit Emoji
+- *:rocket:* add new stuff
+- *:fire:* delete some stuff
+- *:axe: :bug:* fix bug
+- *:zap:* faster than ever
+- *:tada:* introduce new feature
+- *:pushpin:* tag
+- *:wave:* greet new member
+- *:+1:* thanks for contribution
+== Merge, Rebase, Squash
+```sh
+git rebase -i  # squash to one commit
+```
+= GitHub
+- Fork, Sync, PullRequest:
+  - git branch -u origin/main main
+  - git merge main origin/main
+  - git merge origin/main main
 = SSH to Verify
 + generate a (KEY.pub, KEY) pair;
 + add to GitHub *as a sign key*;
