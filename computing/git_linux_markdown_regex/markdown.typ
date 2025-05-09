@@ -127,7 +127,7 @@ GitHub is a popular remote server for Git repositories. To write at GitHub with 
   [#cp(hsl(212deg,92%,45%), m:"hsl")], [\``hsl(212,92%,45%)`\`], [],
   [#link(<g-m>)[Auto Anchor]], [`[Auto Anchor](#github-markup)`], [],
   [#done Task\ #plan List], [`- [x] Task`\ `- [ ] List`], [`* [x] Task`\ `* [ ] List`],
-  [#link("Issue24") or #link("PullRequest24")\ #box()[#rect(fill:luma(240), underline(text(blue)[0abc986])) #rect(inset:2.5pt, stroke:(bottom:0.5pt+luma(0)), text(black)[*\@User*])]],
+  [#link("Issue24") or #link("PullRequest24")\ #stack(dir:ltr, rect(fill:luma(240), underline(text(blue)[0abc986])), rect(inset:2.5pt, stroke:(bottom:0.5pt+luma(0)), text(black)[*\@User*]))],
   [`#24 0abc986 @User`], [],
   [👏👍🐛🚀⚡🔥🎉📌],
   table.cell(colspan:2)[`:wave: :+1: :bug: :rocket: :zap: :fire: :tada: :pushpin:`],
