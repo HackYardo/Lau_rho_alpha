@@ -117,17 +117,18 @@ git changelog File
 == Commit Emoji
 - *:rocket:* add new stuff
 - *:fire:* delete some stuff
-- *:axe: :bug:* fix bug
 - *:zap:* faster than ever
+- *:axe: :bug:* fix bug
 - *:tada:* introduce new feature
 - *:pushpin:* tag
 - *:wave:* greet new member
 - *:+1:* thanks for contribution
-== Merge, Rebase, Squash
+== Merge, Rebase, Stash, Cherry-Pick
 ```sh
 git rebase -i  # squash to one commit
 ```
-= GitHub
+== Subtree, Submodule
+== GitHub
 - Fork, Sync, PullRequest:
   - git branch -u origin/main main
   - git merge main origin/main
