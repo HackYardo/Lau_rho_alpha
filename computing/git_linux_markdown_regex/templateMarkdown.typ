@@ -82,7 +82,13 @@ Bootstrap:
   inset:2.5pt, stroke:(bottom:0.5pt+luma(0)), text(black, [*\@**#u*])))
 
 // unicode emoji characters
-#let c = ([\u{0}], [\u{0}], [\u{0}], [\u{0}], [\u{0}], [\u{1f44f}], [\u{1f44b}], [\u{1f44d}], [\u{1f680}], [\u{1f525}], [\u{1f41b}], [\u{1fa93}], [\u{26a1}], [\u{0}], [\u{1f4cc}])
+#let chars = ([\u{0}], [\u{0}], [\u{0}], [\u{0}], [\u{0}],
+  [\u{1f680}], [\u{270c}], [\u{1f440}], [\u{1f44d}], [\u{1f44f}], [\u{1f44b}],
+  [\u{1f426}], [\u{1f99c}], [\u{1f989}], [\u{1f41c}], [\u{1f41d}], [\u{1f41b}],
+  [\u{1f6f8}], [\u{1f916}], [\u{1f9f2}], [\u{26a1}], [\u{1f525}], [\u{1f4fa}],
+  [\u{2604}], [\u{2b50}], [\u{1f3a8}], [\u{1f389}], [\u{1f3c6}], [\u{1f48E}])
+//#let chars_git = ([\u{1f389}], [\u{1f381}], [\u{1f4dc}], [\u{1f48E}], [\u{26a1}], [\u{1f3a8}], [\u{1f426}], [\u{1f41b}], [\u{1f41c}], [\u{1fAB0}], [\u{1f41d}], [\u{1f6f8}])
+
 // github-markup alert(index, info)
 #let k = (blue, olive, purple, orange, red)
 #let h = ([ Note], [ Tip], [ Important], [ Warning], [ Caution])

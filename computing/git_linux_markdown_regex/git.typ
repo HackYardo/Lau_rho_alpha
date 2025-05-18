@@ -1,7 +1,7 @@
 #set page(
 	flipped:true,
 	columns:3,
-	header:[You Need the 3 things: Internet, GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git), Add(buffer zone), Commit(log/push/fetch/merge/pull).])
+	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git), Add(buffer zone), Commit(log/push/fetch/merge).])
 #set par(justify:true)
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
@@ -114,21 +114,29 @@ nano ~/.gitconfig
 git changelog
 git changelog File
 ```
-== Commit Emoji
-- *:rocket:* add new stuff
-- *:fire:* delete some stuff
-- *:zap:* faster than ever
-- *:axe: :bug:* fix bug
-- *:tada:* introduce new feature
-- *:pushpin:* tag
-- *:wave:* greet new member
-- *:+1:* thanks for contribution
+== Classify Commits by Emoji
+- launch
+  - *:tada:* introduce few features
+  - *:gift:* compatible with new platforms
+  - *:scroll:* write a tutorial, guide or reference
+- revise
+  - *:gem:* prettier; firmer
+  - *:zap:* faster
+  - *:art:* adopt more modern methods
+  - *:bird:* wipe out bugs, fix problems
+- bug (C:compile-time, R:run-time)
+  - *:bug:* syntax (C); general (CR).
+  - *:ant:* environment. (C)
+  - *:fly:* 3rd parties; corner cases; logic. (R)
+  - *:bee:* security. (R)
+  - *:ufo:* unknown
+
 == Merge, Rebase, Stash, Cherry-Pick
 ```sh
 git rebase -i  # squash to one commit
 ```
 == Subtree, Submodule
-== GitHub
+= GitHub
 - Fork, Sync, PullRequest:
   - git branch -u origin/main main
   - git merge main origin/main

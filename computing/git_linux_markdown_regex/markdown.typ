@@ -1,4 +1,4 @@
-#import "templateMarkdown.typ": github_markup, headingf, cm_quote, gm_colordot, gm_commit, gm_call, gm_alert, done, plan
+#import "templateMarkdown.typ": github_markup, headingf, cm_quote, gm_colordot, gm_commit, gm_call, gm_alert, done, plan, chars
 #import color: rgb, hsl
 
 #show: github_markup.with()
@@ -11,7 +11,7 @@ Markdown is a plain text syntax to write single-page, single-column, left-align 
 
 In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan of *Meteor*, Vicent Marti of *GitHub*, Neil Williams of *Reddit*, Benjamin Dumke-von der Ehe of *Stack Overflow / Stack Exchange*, Jeff Atwood of *Discourse*)_ started the CommonMark, a specification of Markdown that available in many Web sites. Its C #link("https://github.com/commonmark/cmark")[code] and #link("https://commonmark.org/help/")[syntax]:
 
-#table(columns:(10em, 13em, 15em), align:left+horizon,
+#table(columns:(10em,12em,10em), align:left+horizon,
   table.header([*Result*], [*Method A*], [*Method B*]),
 
   [roman], [roman],[],
@@ -71,8 +71,11 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
 GitHub is a remote server for Git repositories and a hub to cooperate in writing code or share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
 
 #table(columns:3, align:left+horizon,
-  [👏👍🚀🔥🐛🪓⚡🎉📌],
-  table.cell(colspan:2)[:wave: :+1: :rocket: :fire: :bug: :axe: :zap: :tada: :pushpin:],
+  grid(columns:8, ..chars.slice(5)),
+  table.cell(colspan:2)[
+  :rocket: :v: :eyes: :+1: :clap: :wave: :bird: :parrot:\
+  :owl: :ant: :bee: :bug: :ufo: :robot: :magnet: :zap:\
+  :fire: :tv: :comet: :star: :art: :tada: :trophy: :gem:],
 
   gm_alert(0)[Useful even skimming], [> [!NOTE]\ > Useful even skimming], [],
   gm_alert(1)[Helpful for better], [> [!TIP]\ > Helpful for better], [],
@@ -135,7 +138,7 @@ firefox mr.html
 / #link("https://www.perl.org/")[Perl], #link("https://www.c-language.org/about")[C], #link("https://www.ruby-lang.org/")[Ruby]: programming languages
 / #link("https://git-scm.com/")[Git]: a tiny and fast distributed version control system (DVCS) that takes a developing folder as a stream of snapshots for branching
 / repository: a folder that enables a VCS to manage files and their changes
-/ unicode: the de facto standard for encoding all (over 150,000) characters, e.g.\
+/ unicode: the de facto standard for encoding all (150,000 or so) characters, e.g.\
  ```typ \u{61}\u{62}\u{66}\u{1f34e}\u{1f37a}\u{1f90c}``` => \u{61}\u{62}\u{66}\u{1f34e}\u{1f37a}\u{1f90c}
 / emoji: a subset of unicode that uses pictures to describe things or express emotions
 / issue: a bug report, feature request, layout advice, etc of a repository at GitHub
