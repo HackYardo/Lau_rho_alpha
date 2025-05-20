@@ -9,7 +9,7 @@ Markdown is a plain text syntax to write single-page, single-column, left-align 
 
 == CommonMark
 
-In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan of *Meteor*, Vicent Marti of *GitHub*, Neil Williams of *Reddit*, Benjamin Dumke-von der Ehe of *Stack Overflow / Stack Exchange*, Jeff Atwood of *Discourse*)_ started the CommonMark, a specification of Markdown that available in many Web sites. Its C #link("https://github.com/commonmark/cmark")[code] and #link("https://commonmark.org/help/")[syntax]:
+In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan of *Meteor*, Vicent Marti of *GitHub*, Neil Williams of *Reddit*, Benjamin Dumke-von der Ehe of *Stack Overflow / Stack Exchange*, Jeff Atwood of *Discourse*)_ started the CommonMark, a specification of Markdown that available in many Web sites. You needn't convert to HTML by yourself. Its C #link("https://github.com/commonmark/cmark")[code] and #link("https://commonmark.org/help/")[syntax]:
 
 #table(columns:(10em,12em,10em), align:left+horizon,
   table.header([*Result*], [*Method A*], [*Method B*]),
@@ -22,17 +22,17 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
   [#headingf(2)[Heading 2]], [\#\# Heading 2], [Heading 2\ \-\-\-],
   [#headingf(3)[Heading 3 (up to 6)]], [\#\#\# Heading 3 (up to 6)], [],
 
-  [+ Numbered\
+  [+ Numbered
    + List],
   [\1.#str("  ")Numbered\ \2.#str("  ")List],
   [1)#str("  ")Numbered\ 2)#str("  ")List],
 
-  [- Bullet\
+  [- Bullet
    - List],
   [\*#str("  ")Bullet\ \*#str("  ")List],
   [\-#str("  ")Bullet\ \-#str("  ")List],
 
-  [+ Nested\
+  [+ Nested
      - List],
   [\1.#str("  ")Nested\ #str("    ")\*#str("  ")List],
   [1)#str("  ")Nested\ #str("    ")\-#str("  ")List],
@@ -64,18 +64,21 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
 
   [\# Symbol Escape], [\\\# Symbol Escape], [],
 
-  [Next\ Line], [Next\\ Line], [])
+  [Next\ Line], [Next\\ Line], [Next\\\ Line])
 
 == GitHub Markup <g-m>
 
+#raw(lang:"none","
+```perl
+# Block Code
+print \"Hello?\"
+```")
 GitHub is a remote server for Git repositories and a hub to cooperate in writing code or share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
 
 #table(columns:3, align:left+horizon,
-  grid(columns:8, ..chars.slice(5)),
+  grid(columns:10, ..chars.slice(5, -2)),
   table.cell(colspan:2)[
-  :rocket: :v: :eyes: :+1: :clap: :wave: :bird: :parrot:\
-  :owl: :ant: :bee: :bug: :ufo: :robot: :magnet: :zap:\
-  :fire: :tv: :comet: :star: :art: :tada: :trophy: :gem:],
+    :rocket: :v: :eyes: :+1: :trophy: :art :zap: :parrot: :robot: ...],
 
   gm_alert(0)[Useful even skimming], [> [!NOTE]\ > Useful even skimming], [],
   gm_alert(1)[Helpful for better], [> [!TIP]\ > Helpful for better], [],
@@ -107,7 +110,7 @@ GitHub is a remote server for Git repositories and a hub to cooperate in writing
 
   strike[strikethrough], [\~strikethrough\~], [\~\~strikethrough\~\~],
 
-  [- #done Task\ 
+  [- #done Task
    - #plan List], [\- [x] Task\ \- [ ] List], [\* [x] Task\ \* [ ] List])
 
 == HTML
