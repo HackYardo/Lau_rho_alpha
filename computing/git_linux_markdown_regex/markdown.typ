@@ -11,7 +11,7 @@ Markdown is a plain text syntax to write single-page, single-column, left-align 
 
 In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan of *Meteor*, Vicent Marti of *GitHub*, Neil Williams of *Reddit*, Benjamin Dumke-von der Ehe of *Stack Overflow / Stack Exchange*, Jeff Atwood of *Discourse*)_ started the CommonMark, a specification of Markdown that available in many Web sites. You needn't convert to HTML by yourself. Its C #link("https://github.com/commonmark/cmark")[code] and #link("https://commonmark.org/help/")[syntax]:
 
-#table(columns:(10em,12em,10em), align:left+horizon,
+#table(columns:3, align:left+horizon,
   table.header([*Result*], [*Method A*], [*Method B*]),
 
   [roman], [roman],[],
@@ -57,7 +57,7 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
   [#str("![Image](i.png \"CC0 1.0\")")],
   [#str("![Image][2]")\ #str("[2]: i.png \"CC0 1.0\"")],
 
-  [#line(length:100%)], [\-\-\-], [\*\*\*],
+  [#line(length:9em)], [\-\-\-], [\*\*\*],
 
   [#link(<c-a>)[Custom Anchor]<c-a>],
   [#str("<a name=\"c-a\"></a>")\ #str("[Custom Anchor](#c-a)")], [],
@@ -68,17 +68,12 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
 
 == GitHub Markup <g-m>
 
-#raw(lang:"none","
-```perl
-# Block Code
-print \"Hello?\"
-```")
-GitHub is a remote server for Git repositories and a hub to cooperate in writing code or share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
+GitHub is a remote server for Git repositories and a hub to cooperate in writing code or to share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
 
 #table(columns:3, align:left+horizon,
   grid(columns:10, ..chars.slice(5, -2)),
   table.cell(colspan:2)[
-    :rocket: :v: :eyes: :+1: :trophy: :art :zap: :parrot: :robot: ...],
+    :rocket: :v: :eyes: :+1: :trophy: :art: :zap: :parrot: :robot: ...],
 
   gm_alert(0)[Useful even skimming], [> [!NOTE]\ > Useful even skimming], [],
   gm_alert(1)[Helpful for better], [> [!TIP]\ > Helpful for better], [],
@@ -111,7 +106,9 @@ GitHub is a remote server for Git repositories and a hub to cooperate in writing
   strike[strikethrough], [\~strikethrough\~], [\~\~strikethrough\~\~],
 
   [- #done Task
-   - #plan List], [\- [x] Task\ \- [ ] List], [\* [x] Task\ \* [ ] List])
+   - #plan List],
+  [\- [x] Task\ \- [ ] List],
+  [\* [x] Task\ \* [ ] List])
 
 == HTML
 
@@ -137,12 +134,12 @@ firefox mr.html
 
 == Glossary
 
-/ plain text: characters that only from a computer keyboard(US); #link("https://www.asciitable.com/")[ASCII] characters
+/ plain text: characters that only from a US keyboard; #link("https://www.asciitable.com/")[ASCII] characters
 / #link("https://www.perl.org/")[Perl], #link("https://www.c-language.org/about")[C], #link("https://www.ruby-lang.org/")[Ruby]: programming languages
-/ #link("https://git-scm.com/")[Git]: a tiny and fast distributed version control system (DVCS) that takes a developing folder as a stream of snapshots for branching
+/ #link("https://git-scm.com/")[Git]: a tiny and fast distributed version control system (DVCS) that takes a developing folder as a stream of snapshots for better branching and merging
 / repository: a folder that enables a VCS to manage files and their changes
 / unicode: the de facto standard for encoding all (150,000 or so) characters, e.g.\
- ```typ \u{61}\u{62}\u{66}\u{1f34e}\u{1f37a}\u{1f90c}``` => \u{61}\u{62}\u{66}\u{1f34e}\u{1f37a}\u{1f90c}
+ ```typ \u{61} \u{62} \u{66} \u{1f34e} \u{1f37a} \u{1f90c}``` => \u{61} \u{62} \u{66} \u{1f34e} \u{1f37a} \u{1f90c}
 / emoji: a subset of unicode that uses pictures to describe things or express emotions
 / issue: a bug report, feature request, layout advice, etc of a repository at GitHub
 / pull request: a request of merging branches at GitHub

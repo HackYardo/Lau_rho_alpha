@@ -40,14 +40,13 @@ Bootstrap:
   show ref: r => text(blue, underline(r))
 
   show raw.where(block:false): box.with(
-    fill: luma(240),
-    inset: (x:3pt, y:0pt),
-    outset: (y:3pt),
-    radius: 2pt,)
-  show raw.where(block:true, lang:regex("(perl)")): block.with(
-    fill:luma(240),
-    inset:10pt,
-    radius:4pt,)
+    inset:(x:3pt,y:0pt), outset:(y:3pt), radius:2pt,
+    fill:luma(240),)
+  show raw.where(block:true): self => {
+    if type(self.lang) == type(none) {self}
+    else {block(inset:10pt, radius:4pt,
+      fill:luma(240),
+      self)}}
 
   compose}
 
@@ -76,9 +75,9 @@ Bootstrap:
   show heading: h => rect(height:1.2em, width:100%, inset:0pt,
     stroke:(bottom:0.5pt+luma(220)), h.body)
 
-  show regex("(@User)"): r => link("http://gh.c/", text(black, underline([*#r*])))
+  /*show regex("(@User)"): r => link("http://gh.c/", text(black, underline([*#r*])))
   show regex("(\[x\])"): text(blue, chars.at(-2))
-  show regex("(\[ \])"): text(blue, chars.at(-1))
+  show regex("(\[ \])"): text(blue, chars.at(-1))*/
 
   compose}
 
