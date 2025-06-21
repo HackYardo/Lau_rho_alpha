@@ -11,8 +11,8 @@ Markdown is a plain text syntax to write single-page, single-column, left-align 
 
 In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan of *Meteor*, Vicent Marti of *GitHub*, Neil Williams of *Reddit*, Benjamin Dumke-von der Ehe of *Stack Overflow / Stack Exchange*, Jeff Atwood of *Discourse*)_ started the CommonMark, a specification of Markdown that available in many Web sites. You needn't convert to HTML by yourself. Its C #link("https://github.com/commonmark/cmark")[code] and #link("https://commonmark.org/help/")[syntax]:
 
-#table(columns:3, align:left+horizon,
-  table.header([*Result*], [*Method A*], [*Method B*]),
+#table(columns:3,
+  table.header([Result], [Method A], [Method B]),
 
   [roman], [roman],[],
   [_italic_], [\*italic\*], [\_italic\_],
@@ -70,7 +70,9 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
 
 GitHub is a remote server for Git repositories and a hub to cooperate in writing code or to share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
 
-#table(columns:3, align:left+horizon,
+#table(columns:3,
+  table.header([Result], [Method A], [Method B]),
+
   grid(columns:10, ..chars.slice(5, -2)),
   table.cell(colspan:2)[
     :rocket: :v: :eyes: :+1: :trophy: :art: :zap: :parrot: :robot: ...],
@@ -114,7 +116,8 @@ GitHub is a remote server for Git repositories and a hub to cooperate in writing
 
 #link("https://developer.mozilla.org/en-US/docs/Web/HTML")[HyperText Markup Language] is the bricks to build Web sites. By a browser, e.g. Firefox or Yandex, one can download a Web page as a .html file or view a .html file as a Web page. HTML uses many ```html <tag> </tag>``` to marks headings, paragraphs, links, etc. *HTML tags can be used in Markdown.* Some useful ones:
 
-#table(columns:2, align:left+horizon,
+#table(columns:2,
+  table.header([Result], [Method]),
   [#underline[underline]], [\<ins\> underline \</ins\>],
   [], [\<!-- comment --\>],
   [#super[super]script], [\<sup\> super \</sup\> script],

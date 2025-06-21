@@ -16,6 +16,10 @@ The GitHub Markup Template:
 - Alarts: Note, Tip, Important, Warning, Caution;
 - Color Dots;
 - Task Lists;
+- Table:
+  - header is bold and mid;
+  - half table rows are gray;
+  - all strokes are gray.
 
 Bootstrap:
 - Accordion, Button Group, Navs & Tabs, Pagination, Progress
@@ -78,6 +82,14 @@ Bootstrap:
   /*show regex("(@User)"): r => link("http://gh.c/", text(black, underline([*#r*])))
   show regex("(\[x\])"): text(blue, chars.at(-2))
   show regex("(\[ \])"): text(blue, chars.at(-1))*/
+
+  show table.cell.where(y:0): strong
+  set table(
+    align: (x,y) => (
+      if y == 0 {center}
+      else {left+horizon}),
+    fill: (_,y) => if y>0 and calc.rem(y,2) == 0 {luma(250)},
+    stroke: 0.5pt + luma(220))
 
   compose}
 
