@@ -93,3 +93,6 @@ The library that can be used with import and download.
 = Aerodynamics
 = Applied Mathematics
 = Artificial Intelligence
+= Idea
+== Conway Game PK
+== Thermal electric energy, air conditioner

@@ -37,6 +37,8 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
   [\1.#str("  ")Nested\ #str("    ")\*#str("  ")List],
   [1)#str("  ")Nested\ #str("    ")\-#str("  ")List],
 
+  [#line(length:9em)], [\-\-\-], [\*\*\*],
+
   [#cm_quote()[Block Quote]], [>#str("  ")Block Quote], [],
 
   [`Inline Code`], [\`Inline Code\`], [],
@@ -56,8 +58,6 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
   [#link("https://github.com/dcurtis/markdown-mark#license", image("i.png", width:2em))],
   [#str("![Image](i.png \"CC0 1.0\")")],
   [#str("![Image][2]")\ #str("[2]: i.png \"CC0 1.0\"")],
-
-  [#line(length:9em)], [\-\-\-], [\*\*\*],
 
   [#link(<c-a>)[Custom Anchor]<c-a>],
   [#str("<a name=\"c-a\"></a>")\ #str("[Custom Anchor](#c-a)")], [],
