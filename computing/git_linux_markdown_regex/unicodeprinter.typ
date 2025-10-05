@@ -31,7 +31,7 @@
 	let rowIdx = 0
 	let middle = start
 
-	// special case: first line
+	// special case: first row
 	let itemEmpty = ()
 	while dec2hex(middle).at(-1) != "0" {
 		itemEmpty.push("")
@@ -53,7 +53,7 @@
 
 		item.push(leader.at(rowIdx))
 
-		if middle >= end {middle = end}  // special case: last line
+		if middle >= end {middle = end}  // special case: last row
 		item.push(range(start, middle).map(str.from-unicode))}
 
 	grid(columns: 17, gutter: 12pt, 
