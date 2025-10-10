@@ -1,3 +1,10 @@
+#set document(
+  title:[Thin Emoji],
+  author:"HackYardo@github.com",
+  description:[the most concise Emoji table],
+  keywords:("unicode", "emoji", "cheat-sheet"),
+  date:auto)
+
 #set text(blue)
 
 #let dec2hex(num) = {
@@ -21,8 +28,7 @@
 	return rowIdx}
 
 #let unicode_printer_no_axis(start, end) = {
-	grid(columns: 16, gutter: 12pt, 
-		..range(start, end).map(str.from-unicode))}
+	grid(columns:16, gutter:12pt, ..range(start, end).map(str.from-unicode))}
 
 #let unicode_printer(start, end) = {
 	let header = "0123456789abcdef".split("").slice(0,-1)
@@ -56,16 +62,14 @@
 		if middle >= end {middle = end}  // special case: last row
 		item.push(range(start, middle).map(str.from-unicode))}
 
-	grid(columns: 17, gutter: 12pt, 
-		grid.header(..header),
-		..item.flatten())}
+	grid(columns:17, gutter:12pt, grid.header(..header), ..item.flatten())}
 
-#line(length:100%)
+//all unicode: (0, 1114096)  // 0000~10FFEF
 #unicode_printer(9728, 10064)  // 2600~274f
-//invalid unicode (55296, 57344)  // (0xd800, 0xdfff)
+//invalid unicode: (55296, 57344)  // d800~dfff
 #line(length:100%)
 #unicode_printer(61398, 62177)  // efd6~f2e0
 #line(length:100%)
-#unicode_printer(127744, 129202)  // 1f300~1f8b1
+#unicode_printer(127744, 128765)  // 1f300~1f6fc
 #line(length:100%)
-#unicode_printer(129280, 129785)  // 1f900~1faf8
+#unicode_printer(129292, 129785)  // 1f90c~1faf8

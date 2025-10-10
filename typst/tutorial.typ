@@ -89,6 +89,60 @@ cd typstDir/
 
 = User Guide
 
+#table(columns:2,
+  table.header([Result], [Method]),
+
+  [roman], [roman],
+  [_italic_], [\_italic\_],
+  [*BOLD*], [\*BOLD\*],
+
+  [#headingf(1)[Heading 1]], [\= Heading 1],
+  [#headingf(2)[Heading 2]], [\=\= Heading 2],
+  [#headingf(3)[Heading 3...]], [\=\=\= Heading 3...],
+
+  [+ Numbered
+   + List],
+  [\+ Numbered
+   \+ List],
+
+  [- Bullet
+   - List],
+  [\- Bullet
+   \- List],
+
+  [+ Nested
+     - List],
+  [\+ Nested
+     \- List],
+
+  [#line(length:9em)], [```typ #line(length:9em)```],
+
+  [#cm_quote()[Block Quote]], [>#str("  ")Block Quote],
+
+  [`Inline Code`], [\`Inline Code\`],
+
+  [```perl
+   # Block Code
+   print "Hello?"```],
+  [\`\`\`perl\ \# Block Code\ print \"Hello?\"\ \`\`\`],
+
+  [#link("https://w.com")[Link]],
+  [[Link](#str("https://w.com"))],
+  [[Link][1]\ [1]: #str("https://w.com")],
+
+  [https://w.com], [#str("<https://w.com>")], [],
+
+  [#link("https://github.com/dcurtis/markdown-mark#license", image("i.png", width:2em))],
+  [#str("![Image](i.png \"CC0 1.0\")")],
+  [#str("![Image][2]")\ #str("[2]: i.png \"CC0 1.0\"")],
+
+  [#link(<c-a>)[Custom Anchor]<c-a>],
+  [#str("<a name=\"c-a\"></a>")\ #str("[Custom Anchor](#c-a)")], [],
+
+  [\# Symbol Escape], [\\\# Symbol Escape], [],
+
+  [Next\ Line], [Next\\ Line], [Next\\\ Line])
+
 There are four important things of Typst: *set/show* layout/format tool and 3 modes(*markup, math, code*). In most cases, you're in markup mode. And to call reserved words or functions inside markup mode, add a *\#* special symbol: 
 - ```typ #image("glacier.jpg", width: 62%)```
 #image("glacier.jpg", width: 62%)

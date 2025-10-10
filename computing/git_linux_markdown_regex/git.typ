@@ -131,6 +131,7 @@ git changelog File
   - *:bee:* security. (R)
   - *:ufo:* unknown
 
+== Large Non-Text File
 == Merge, Rebase, Stash, Cherry-Pick
 ```sh
 git rebase -i  # squash to one commit
@@ -160,3 +161,6 @@ nano ~/.gitconfig
 [gpg.ssh]
   allowedSignersFile = .ssh/signers
 ```
+= FAQ
+== git fetch vs git pull
+== git rm vs rm
