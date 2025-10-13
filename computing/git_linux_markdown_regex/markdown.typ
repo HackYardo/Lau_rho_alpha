@@ -68,7 +68,7 @@ In 2014, a group of Markdown fans _(John MacFarlane of *Pandoc*, David Greenspan
 
 == GitHub Markup <g-m>
 
-GitHub is a remote server for Git repositories and a hub to cooperate in writing code or to share code. To write at GitHub with more ease, they extend CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
+GitHub is a remote server for Git repositories and a hub to cooperate in writing code or to share code. To write at GitHub with more ease, they expand CommonMark by unicode emoji, alert, color dot, table, task list, etc. Its Ruby #link("https://github.com/github/markup")[code] and expanded #link("https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax")[syntax]:
 
 #table(columns:3,
   table.header([Result], [Method A], [Method B]),
@@ -122,7 +122,7 @@ GitHub is a remote server for Git repositories and a hub to cooperate in writing
   [], [\<!-- comment --\>],
   [#super[super]script], [\<sup\> super \</sup\> script],
   [#sub[sub]script], [\<sub\> sub \</sub\> script],
-  [ Fold, Unfold\ Section],
+  [\u{f0d7} Fold, Unfold\ Section],
   [\<details open\>\ \<summary\> Fold, Unfold \</summary\>\ Section\ \</details\>])
 
 A bit troublesome, isn't it? *Markdown is exactly a simplification of HTML!* Markdown is the logs to build cabins to live in soon. If you haven't downloaded the Perl code, let's try:
@@ -142,7 +142,7 @@ firefox mr.html
 / #link("https://git-scm.com/")[Git]: a tiny and fast distributed version control system (DVCS) that takes a developing folder as a stream of snapshots for better branching and merging
 / repository: a folder that enables a VCS to manage files and their changes
 / unicode: the de facto standard for encoding all (150,000 or so) characters, e.g.\
- ```typ \u{61} \u{62} \u{66} \u{1f34e} \u{1f37a} \u{1f90c}``` => \u{61} \u{62} \u{66} \u{1f34e} \u{1f37a} \u{1f90c}
+ ```typ \u{61} \u{62} \u{63} \u{1f34e} \u{1f37a} \u{1f90c}``` => \u{61} \u{62} \u{63} \u{1f34e} \u{1f37a} \u{1f90c}
 / emoji: a subset of unicode that uses pictures to describe things or express emotions
 / issue: a bug report, feature request, layout advice, etc of a repository at GitHub
 / pull request: a request of merging branches at GitHub
