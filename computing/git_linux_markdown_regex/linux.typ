@@ -51,6 +51,10 @@ du -hd2 --exclude=*.pdf
 ```
 == Package and Source Mirror
 ```sh
+cd /etc/apt/
+cat sources.list
+cd sources.list.d/
+ls
 apt  # manage standard?? package
 apt-get
 dpkg  # install third party pacakge
@@ -64,4 +68,13 @@ pacman
 ls -p | grep -v /  # not list folders
 find . -maxdepth 1 -type f  # only list files
 # the above two maybe different
+```
+== Font
+```sh
+cd /usr/share/fonts/
+sudo mkdir download
+cd download/
+wget xxx.ttf
+apt show fontconfig
+fc-list
 ```
