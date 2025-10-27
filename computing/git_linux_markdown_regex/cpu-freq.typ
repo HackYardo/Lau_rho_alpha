@@ -43,7 +43,7 @@ $ sudo mokutil --sb-state
 ```sh
 $ sudo apt install msr-tools -y
 $ sudo modprobe msr
-$ sudo rdmsr -a -d 0x1FC  = 2359389
+$ sudo rdmsr -a -d 0x1FC  # 2359389
 $ sudo wrmsr 0x1FC 2359388
 ```
 
