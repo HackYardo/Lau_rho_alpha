@@ -65,41 +65,28 @@ git clone git@github.com:User/Repo.git
 git status; git diff
 # when too long:
 #   space/b to next/pre page, q to quit
-git add -u; git status
-git commit -m 'Info'; git log -p -1
-git push; git status; git log -3
+git add -u; git commit -m 'Info'
+git push; git status; git log -p -1
 # edit File at remote
 git fetch  # download not merge
 git pull  # download and merge
 ```
-== Ignore, Delete, Move, Check
+== Ignore, Delete, Move
 ```sh
 /a.pdf # ignore a.pdf by Repo/.gitignore
 *.pdf  # ig all pdfs
-!b.pdf     # not ig b.pdf
+!b.pdf # not ig b.pdf
 A/         # ig the whole A/ folder
 A/*.pdf    # ig all pdfs in A/ but A/B/
 A/**/*.pdf # ig all pdfs in A/
 git rm \*~ # delete all files end with ~
 git mv File_from File_to  # move/rename
-git diff --check  # check whitespace err
 ```
-== Commit, Tag, Branch
+== Utility, Alias, Graphical Interface
 ```sh
-git commit --amend  # recommit promptly
-git tag v2.0 -m '' 0ac6 # tag commit0ac6
-git push --tags  # push all tags
-git tag -d v2.0  # delete tag at local
-git push --delete v2.0 # del at remote
-git branch issue10; git switch issue10
-git push -u origin issue10
-# handle issue10 and commit
-git switch main && git merge issue10
-git branch -d issue10
-git push --delete issue10
-```
-== Alias
-```sh
+git diff --check # check blank space err
+git add --patch File  # add part of File
+git commit --amend  # modify last commit
 git config --global alias.changelog \
 'log --pretty="%Cgreen%h %as %Creset%s"'
 git config --global alias.countdiff \
@@ -108,12 +95,26 @@ git config --global alias.recent \
 "diff --patch-with-stat 'HEAD~1...HEAD'"
 nano ~/.gitconfig
 [alias]
-  last = log -p -1
   graph = log --pretty=\"%h %s\" --graph
 # to use a git alias, e.g.
 git changelog
 git changelog File
+# view history or edit commit visually:
+gitk --all; git gui
 ```
+== Tag, Branch, Merge
+```sh
+git tag v0.1 -m '' sha1 # tag CommitSHA1
+git push --tags  # push tags to remote
+git tag -d v0.1  # delete tag at local
+git push --delete v0.1 # del at remote
+git branch Puzzle; git switch Puzzle
+git push -u origin Puzzle
+# solve Puzzle: edit,add,commit,push
+git switch main && git merge Puzzle
+git branch -d Puzzle; git push -d Puzzle
+```
+
 == Classify Commits by Emoji
 - launch
   - *:tada:* introduce few features
