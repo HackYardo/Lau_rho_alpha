@@ -50,7 +50,7 @@ git log; git commit -m 'Init'; git log
 == Local and Remote
 ```sh
 # local to remote
-# create a new repo at GitHub, optional:
+# create a new repo at GitHub, optional
 #   readme, license or .gitignore files
 git remote add origin \
   git@github.com:User/Repo.git
@@ -99,7 +99,7 @@ nano ~/.gitconfig
 # to use a git alias, e.g.
 git changelog
 git changelog File
-# view history or edit commit visually:
+# view history or edit commit visually
 gitk --all; git gui
 ```
 == Tag, Branch, Merge
