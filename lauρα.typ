@@ -86,10 +86,10 @@ The library that can be used without import or download.
 The library that can be used with import and without download.
 == Third Library
 The library that can be used with import and download.
-= Natural Language
-== Europe Language Rank[?]
-== English
-== Greek
+= Natural Language, Symbol
+== CEFR Level, English
+== Greek Letter, Math Symbol
+== Unicode, Emoji
 = Aerodynamics
 = Applied Mathematics
 = Artificial Intelligence

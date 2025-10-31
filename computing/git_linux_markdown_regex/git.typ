@@ -1,7 +1,9 @@
 #set page(
 	flipped:true,
 	columns:3,
-	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git), Add(buffer zone), Commit(log/push/fetch/merge).])
+	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git tree), Add(shade of Git tree, buffer zone), Commit(Git tree: log/push/fetch/merge/...).],
+  footer:[Keep in mind: add/branch/local is light, commit/tag/remote is heavy. So, use more branches to try Git;\
+  Some abbrs in commands, e.g. git push])
 #set par(justify:true)
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
@@ -161,6 +163,9 @@ nano ~/.gitconfig
   format = ssh
 [gpg.ssh]
   allowedSignersFile = .ssh/signers
+# to see if sign or not
+git log --show-signature
+git log --pretty="format:%as %G? %h %s"
 ```
 = FAQ
 == git fetch vs git pull
