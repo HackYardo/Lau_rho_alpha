@@ -349,6 +349,35 @@ See @t-1 for more.
     - Ascii: 2em
     - Block: [ascii, markup, image(), graph(), par()]
 - Func v([TODO])
+- FUnc rgb(_hex_)
+    - String: "#00ff00", "#00ff00ff"
+- Func rgb(_red_, _green_, _blue_, [_alpha_])
+    - Int: 0, 255
+- Func rgb(_red%_, _green%_, _blue%_, [_alpha%_])
+    - Ratio: 0%, 100%
+- Func luma(_lightness_, [_alpha%_])
+    - Int,Ratio: 0, 255, 0%, 100%
+    - Ratio: 0%, 100%
+- Func luma([_alpha%_], _color_)
+    - Ratio: 0%, 100%
+    - Color: rgb(), luma()
+- Method color.transparentize(_scale_)
+    - alpha * (1 - scale)
+    - Ratio: -100%, 0%, 100%
+- Method color.opacify(_scale_)
+    - alpha * (1 - scale) + scale
+    - Ratio: -100%, 0%, 100%
+- Method color.lighten(_scale_)
+    - Ratio: 0%, 100%
+- Method color.saturate(_scale_)
+    - Ratio: 0%, 100%
+- Method color.negate(space: _colorArea_)
+    - Ascii: oklab, rgb, cmyk, oklch, linear-rgb, hsl, hsv
+- Method color.rotate(_hueAngle_, space: _colorArea_)
+    - Angle: 30deg
+    - Ascii: oklch, rgb, cmyk, oklab, linear-rgb, hsl, hsv
+- Method color.to-hex()
+    - return the hex string of a color, without alpha
 - Keyword \#set _Func(arg:value)_
     - set parameters values of a function for all future uses
 - Keyword \#show "_compose_": _var_ => _func(var, do_sth)_
@@ -376,5 +405,8 @@ See @t-1 for more.
 - Type Func: image(), figure(), page(), par(), text()
 - Type Return: return of func()
 - Type Block: [ascii, markup, func, etc]
+- Type Color: text(ascii, text), table.cell(fill:ascii)
+    red orange yellow lime green olive teal eastern aqua 
+    blue navy fuchsia purple maroon black gray silver white
 
 #bibliography("cite.yml")
