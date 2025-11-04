@@ -385,6 +385,12 @@ See @t-1 for more.
     - Ascii
     - Ascii
     - Func
+- Field raw.line // how to prefix lineNumber to code block:
+    \#show raw.line: l => {
+      let i = str(l.count).len()
+      let j = str(l.number).len()
+      let lineNum = " " * (i - j) + str(l.number) + " "
+      text(gray, lineNum); l.body}
 - Type Compose: 
     - plain text for writting
     - e.g. Lorem ipsum dolor sit amet, consectetur.
@@ -408,5 +414,20 @@ See @t-1 for more.
 - Type Color: text(ascii, text), table.cell(fill:ascii)
     red orange yellow lime green olive teal eastern aqua 
     blue navy fuchsia purple maroon black gray silver white
+- Type content => str // how convert content into string:
+    \#let string(content) = {
+      if content == none { "" }
+      else if type(content) == str { content }
+      else if type(content) == array {content.map(string).join(", ")}
+      else if content.has("text") { content.text }
+      else if content.has("children") {
+        if content.children.len() == 0 { "" }
+        else { content.children.map(string).join("") }}
+      else if content.has("child") {string(content.child)}
+      else if content.has("body") {string(string(content.body))}
+      else if content == [] { "" }
+      else if content == [ ] { " " }
+      else if content.func() == ref { "_ref_" }
+      else {let offending = content; ""}}
 
 #bibliography("cite.yml")
