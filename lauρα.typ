@@ -8,6 +8,7 @@
 #set page(columns:2)
 #set par(justify:true)
 #set text(size:10pt)
+#show "LaTeX": [L#h(-0.3em)#box(move(dy:-0.233em, text(size:0.66em)[A]))#h(-0.1em)T#h(-0.145em)#box(move(dy: 0.233em)[E])#h(-0.135em)X]
 
 // heading_fake(level, heading)
 #let hf(l,h) = {text(1.6em-l*0.2em, weight:"bold")[#h\ ]}
@@ -15,18 +16,18 @@
 #let grey = luma(135)
 
 #let string(content) = {
-  if content == none { "" }
-  else if type(content) == str { content }
+  if content == none {""}
+  else if type(content) == str {content}
   else if type(content) == array {content.map(string).join(", ")}
-  else if content.has("text") { content.text }
+  else if content.has("text") {content.text}
   else if content.has("children") {
-    if content.children.len() == 0 { "" }
-    else { content.children.map(string).join("") }}
+    if content.children.len() == 0 {""}
+    else {content.children.map(string).join("")}}
   else if content.has("child") {string(content.child)}
   else if content.has("body") {string(string(content.body))}
-  else if content == [] { "" }
-  else if content == [ ] { " " }
-  else if content.func() == ref { "_ref_" }
+  else if content == [] {""}
+  else if content == [ ] {" "}
+  else if content.func() == ref {"_ref_"}
   else {let offending = content; ""}}
 
 #let c(color, p:100, compose) = {
@@ -62,7 +63,7 @@ Information is in constant need of composing and publishing. Popular ways are:
   [LaTeX (.tex $=>$ .pdf)],  [],[],[],[need env],[need env],
   [Typst (.typ $=>$ .pdf)],  [],[],[],c(blue)[instant],c(blue)[\~50M exe])]
 
-So I choose Typst. At my first glance, Typst, as a new open source PDF compiler for rocket science, won't replace classic LaTeX in few years. Meanwhile, we really have to say goodbye to Markdown. #c(grey)[As for JupyterBook, a interesting project that converts jupyter notebooks into pdf files, perhaps I can use Typst to implement some of its features such as callout, executable code block with line highlight and result output, cross-ref previews, etc.]
+So I choose Typst. At my first glance, Typst, as a new open source PDF compiler for rocket science, won't replace classic LaTeX in few years. Meanwhile, we really have to say goodbye to Markdown.
 
 #hf(2)[e-Book, Manual, Dictionary]
 Why not azw3, djyu, epub, mobi, chm, mdx?
@@ -74,16 +75,20 @@ Why not a PKMS?
 + It's not sci-tech-oriented (text+math+code) usually, one may need code in VSCode, math and text in LaTeX, then pack all into a PKMS.
 
 #hf(2)[Meta]
-This file is the guide to the Lauρα Library. Every chapter or section is a stand-alone book. And the .gitignore ignores any .pdf to save disk. Color for states or progress: #c(grey)[pause] wait #c(orange)[next] #c(blue)[draft] #c(purple)[revise] #c(green)[archive]
+This file is the guide to the Lauρα Library. Every chapter or section is a stand-alone book. To save disk, the .gitignore ignores any .pdf. Color is for states or progress: #c(grey)[pause] wait #c(orange)[next] #c(blue)[draft] #c(purple)[revise] #c(green)[publish]
 
-#outline(title:"Table of Contents")
+#outline(title:"Table of Contents", depth:2)
 //#pagebreak()
 
 = *Part I: SCIENCE*
 
-= Elementary Science, Scope, Method, Conclusion
+= Elementary Science: Scope, Method, Conclusion
 
 = Applied Mathematics
+== Single Differential Integral
+== Double, Triple, Vector, Tensor
+== Vector Space, Matrix Algebra
+== Stochastic, Probability, Statistics
 
 = Algorithm
 == Aim, Method, Performance
@@ -116,30 +121,32 @@ Base, Standard, Third Party:
 == #c(green)[CommonMark]
 == #c(blue,p:80)[GitHub Markup (GitHub Favoured Markdown)]
 auto-anchor
-== #c(orange)[Jupyter], Julia, Python, R
-myst.md(JupyterBook), reStructuredText(Sphinx), rMarkdown(Pandoc)
+== #c(orange)[JupyterBook MyST]
+myst.md(JupyterBook), reStructuredText(Sphinx), rMarkdown(Pandoc)\
+JupyterBook is a interesting project that converts jupyter notebooks into pdf files, perhaps I can use Typst to implement some of its features such as callout, executable code block with line highlight and result output, cross-ref previews, etc.
 == HyperText Markup Language
 
 = Portable Document Format, Typst
 Intro & Install
 == As a Typesetting System
 === Replace Markdowm
-=== Four Modes: set, math, code, markup
+=== Four Modes: markup, set, math, code
 === Page Layout and Font Format
-=== Math Formula, Advanced Math Formula
+=== Math Formula
 === Reserved Word, Function, Package
 === Example: US-Letter
 == As a Programming Language
 
-= *Part III: IDEA*
+= *Part III: CREATIONs*
+
 = Aerodynamics Trajectory
 = Natural Object Shape Equation
 = Light Reflect in a Closed Mirror
 = Angular Velocity Law: Moon Follow
 = Visual: Circular and Flux Theorem
 = Data Visual, Plot, Web-UI
-== #c(grey)[VastGo: Julia, Plotly-Dash]
-== #c(grey)[VastBaduk: Python, NiceGUI]
+== #c(grey)[VastGo, Plotly.js, Dash.jl]
+== #c(grey)[VastBaduk, NiceGUI.py]
 = Multi-Player Conway Game
 = Quick-Cool Water Cup
 = Cook

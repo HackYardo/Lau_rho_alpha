@@ -416,18 +416,18 @@ See @t-1 for more.
     blue navy fuchsia purple maroon black gray silver white
 - Type content => str // how convert content into string:
     \#let string(content) = {
-      if content == none { "" }
-      else if type(content) == str { content }
-      else if type(content) == array {content.map(string).join(", ")}
-      else if content.has("text") { content.text }
-      else if content.has("children") {
-        if content.children.len() == 0 { "" }
-        else { content.children.map(string).join("") }}
-      else if content.has("child") {string(content.child)}
-      else if content.has("body") {string(string(content.body))}
-      else if content == [] { "" }
-      else if content == [ ] { " " }
-      else if content.func() == ref { "_ref_" }
-      else {let offending = content; ""}}
+        if content == none {""}
+        else if type(content) == str {content}
+        else if type(content) == array {content.map(string).join(", ")}
+        else if content.has("text") {content.text}
+        else if content.has("children") {
+            if content.children.len() == 0 {""}
+            else {content.children.map(string).join("")}}
+        else if content.has("child") {string(content.child)}
+        else if content.has("body") {string(string(content.body))}
+        else if content == [] {""}
+        else if content == [ ] {" "}
+        else if content.func() == ref {"_ref_"}
+        else {let offending = content; ""}}
 
 #bibliography("cite.yml")
