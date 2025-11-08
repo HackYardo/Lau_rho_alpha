@@ -102,4 +102,3 @@ Miscellaneous:
 - [KataGo's GTP Extention]()
 - [KataGo's config sample]()
 - [Sensei's Library]()
-十进制版本号

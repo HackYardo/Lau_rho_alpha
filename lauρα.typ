@@ -2,7 +2,7 @@
   title:[Lauρα], 
   author:"HackYardo@github.com", 
   description:[my personal library for the forgotten and the remembered], 
-  keywords:("book", "cheat-sheet", "knowledge", "note", "pdf", "typst"), 
+  keywords:("book", "cheat-sheet", "knowledge", "note"),
   date:auto)
 
 #set page(columns:2)
@@ -71,8 +71,8 @@ Why not azw3, djyu, epub, mobi, chm, mdx?
 
 #hf(2)[Personal Knowledge Manage System]
 Why not a PKMS?
-+ It supports multimedia formats and online sources, that's not pithy and less compatible.
-+ It's not sci-tech-oriented (text+math+code) usually, one may need code in VSCode, math and text in LaTeX, then pack all into a PKMS.
++ It supports multimedia formats and online sources, that's not pithy or compatible.
++ It's not sci-tech-oriented (text+math+code) usually, one may need text in Office, code in VSCode, math in LaTeX, then pack all into a PKMS.
 
 #hf(2)[Meta]
 This file is the guide to the Lauρα Library. Every chapter or section is a stand-alone book. To save disk, the .gitignore ignores any .pdf. Color is for states or progress: #c(grey)[pause] wait #c(orange)[next] #c(blue)[draft] #c(purple)[revise] #c(green)[publish]
@@ -92,8 +92,8 @@ This file is the guide to the Lauρα Library. Every chapter or section is a sta
 
 = Algorithm
 == Aim, Method, Performance
-== Flow Chart, United Model Language
-== PseudoCode, Backus-Naur Form
+== Flow Chart, Unified Modeling Language
+== PseudoCode, Extended Backus-Naur Form
 
 = Artificial Intelligence
 
@@ -146,9 +146,7 @@ Intro & Install
 = Visual: Circular and Flux Theorem
 = Data Visual, Plot, Web-UI
 == #c(grey)[VastGo, Plotly.js, Dash.jl]
-== #c(grey)[VastBaduk, NiceGUI.py]
+== VastBaduk, NiceGUI.py
 = Multi-Player Conway Game
-= Quick-Cool Water Cup
-= Cook
-= #c(grey)[Fire, Heat, Light, Flame]
+= Quick-Cool Water Cup, Cooking, Fire
 = Garden, Landscape

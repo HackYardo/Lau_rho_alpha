@@ -1,9 +1,9 @@
 #set page(
 	flipped:true,
 	columns:3,
-	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux);\ You Know the 3 areas: Work(outside of Git tree), Add(shade of Git tree, buffer zone), Commit(Git tree: log/push/fetch/merge/...).],
-  footer:[Keep in mind: add/branch/local is light, commit/tag/remote is heavy. So, use more branches to try Git;\
-  Some abbrs in commands, e.g. git push])
+	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux).\ You Know the 3 areas: Work(outside of Git tree), Add(shade of Git tree, buffer zone), Commit(Git tree: log/push/fetch/branch...).],
+  footer:[Keep in mind: add/branch/local is light, commit/tag/remote is heavy. So, use more branches to try Git.\
+  Some commands omit details, e.g. git push (origin main), due to its -u option links local to remote.])
 #set par(justify:true)
 #show heading: h => rect(
 	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
@@ -56,7 +56,7 @@ git log; git commit -m 'Init'; git log
 #   readme, license or .gitignore files
 git remote add origin \
   git@github.com:User/Repo.git
-git remote -v;
+git remote -v
 git push -u; git branch -vva
 # remote to local
 git clone git@github.com:User/Repo.git
@@ -70,7 +70,7 @@ git status; git diff
 git add -u; git commit -m 'Info'
 git push; git status; git log -p -1
 # edit File at remote
-git pull  # the same to:
+git pull origin main  # the same to:
 git fetch && git merge origin/main
 ```
 == Ignore, Delete, Move
@@ -88,7 +88,7 @@ git mv File_from File_to  # move/rename
 ```sh
 git diff --check # check blank space err
 git add --patch File  # add part of File
-git commit --amend  # modify last commit
+git commit --amend  # redo last commit
 git config --global alias.changelog \
 'log --pretty="%Cgreen%h %as %Creset%s"'
 git config --global alias.countdiff \
@@ -106,15 +106,15 @@ gitk --all; git gui
 ```
 == Tag, Branch, Merge
 ```sh
-git tag v0.1 -m '' sha1 # tag CommitSHA1
+git tag v0.1 -m '' Cmit # tag CommitSHA1
 git push --tags  # push tags to remote
 git tag -d v0.1  # delete tag at local
 git push --delete v0.1 # del at remote
-git branch Puzzle; git switch Puzzle
-git push -u origin Puzzle
-# solve Puzzle: edit,add,commit,push
-git switch main && git merge Puzzle
-git branch -d Puzzle; git push -d Puzzle
+git branch dev Cmit; git switch dev
+git push -u origin dev
+# do dev: edit,add,commit,push,edit...
+git switch main && git merge dev
+git branch -d dev; git push -d dev
 ```
 
 == Classify Commits by Emoji

@@ -1,8 +1,5 @@
-# PDF
+# Typst
 *.pdf
-
-# Signature Verify
-.ssh/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

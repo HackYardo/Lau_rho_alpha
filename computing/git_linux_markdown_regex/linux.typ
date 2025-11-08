@@ -1,10 +1,16 @@
+#set page(flipped:false, columns:2)
+#set par(justify:true)
+#show heading: h => rect(
+  height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
+
 = Linux
 Intro, Distro, Install
 == Path, Folder(Directory), File
-- ~ 
+- \~
 - . 
 - .. 
-- /
+- \-
+- \/
   - Start with
   - Middle
   - End with
