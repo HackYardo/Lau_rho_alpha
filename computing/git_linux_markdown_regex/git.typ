@@ -70,8 +70,8 @@ git status; git diff
 git add -u; git commit -m 'Info'
 git push; git status; git log -p -1
 # edit File at remote
-git fetch  # download not merge
-git pull  # download and merge
+git pull  # the same to:
+git fetch && git merge origin/main
 ```
 == Ignore, Delete, Move
 ```sh
