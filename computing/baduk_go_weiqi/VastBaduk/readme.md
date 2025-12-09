@@ -52,7 +52,7 @@ soft/hardware requrement
 Go to **VastBaduk/** and type **../pyvenv/bin/python pagemain.py** in terminal
 </details>
 
-```lisp
+```sh
 python pip
 python venv
 pip install nicegui ...

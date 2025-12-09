@@ -84,3 +84,32 @@ wget xxx.ttf
 apt show fontconfig
 fc-list
 ```
+= How-to
+== Prevent .sh Print
+```sh
+#!/bin/bash
+
+echo "some output"
+$ some output
+
+echo "some output" > output.txt
+  # > redirect stdout
+  # if output.txt not exist, create
+  # if output.txt exist, overwrite
+cat output.txt
+
+echo "some output" >> output.txt
+  # >> redirect stdout
+  # if output.txt not exist, create
+  # if output.txt exist, append
+cat output.txt
+
+echo "some output" > /dev/null
+
+echo "some output" > /dev/null 2>&1
+  # 1 stdout, 2 stderr
+  # 2>&1 redirect stderr to stdout
+
+exec > /dev/null 2>&1
+  # prevent print of the entire .sh script
+```

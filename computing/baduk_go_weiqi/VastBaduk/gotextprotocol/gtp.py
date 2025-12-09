@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import subprocess as sp  # .Popen()
 if __name__ == '__main__':
