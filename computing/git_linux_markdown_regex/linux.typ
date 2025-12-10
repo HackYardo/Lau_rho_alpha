@@ -55,7 +55,7 @@ cd ~/
 ls -ashbl
 du -hd2 --exclude=*.pdf
 ```
-== Package and Source Mirror
+== Source Mirror of Packages
 ```sh
 cd /etc/apt/
 cat sources.list
@@ -69,23 +69,85 @@ rpm
 yum
 pacman
 ```
+=== Packages: install, check, update, remove
+```sh
+# Git Version Control System
+sudo apt install git-all
+git -v
+
+# IDLE, Integrated Development Environment for Python
+sudo apt install python3-full
+idle
+idle xxx.py
+
+# Rust Programming Language
+$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+rustc --version
+
+# Cargo, Build System and Package Manager of Rust
+# ship with Rust
+cargo --version
+
+# Firefox Web Browser
+sudo apt install firefox-esr
+firefox
+firefox xxx.html
+
+# VLC Multimedia Player
+sudo apt install vlc
+vlc
+vlc xxx.mp4
+```
+```sh
+# if xxx is intro by apt
+sudo apt update -y
+sudo apt upgrade  # or
+sudo apt full-upgrade
+
+sudo apt remove xxx
+sudo apt autoremove
+
+# Rust
+rustup updadte
+rustup self uninstall
+```
+== Font, Input Method, Dictionary
+```sh
+# Apply a Downloaded Font
+cd /usr/share/fonts/
+sudo mkdir download
+cd download/
+sudo wget 'https://.../xxx.ttf'
+apt show fontconfig
+fc-list  # or
+typst fonts
+
+# Fcitx5 Input Method
+sudo apt install fcitx5
+fcitx5-configtool
+
+# GoldenDict-ng Dictionary Lookup Program
+sudo apt install glodendict
+goldendict
+
+# Apply a Downloaded Dictionary
+cd ~/Downloads/
+mkdir dict
+cd dict
+wget 'https://.../xxx.mdx'
+goldendict
+  # Edit -> Dictionaries
+    # Sources -> Files -> Add...
+    # OK
+```
 == Bash Shell
 ```sh
 ls -p | grep -v /  # not list folders
 find . -maxdepth 1 -type f  # only list files
 # the above two maybe different
 ```
-== Font
-```sh
-cd /usr/share/fonts/
-sudo mkdir download
-cd download/
-wget xxx.ttf
-apt show fontconfig
-fc-list
-```
-= How-to
-== Prevent .sh Print
+== How-to
+=== Prevent .sh Print
 ```sh
 #!/bin/bash
 
@@ -113,3 +175,5 @@ echo "some output" > /dev/null 2>&1
 exec > /dev/null 2>&1
   # prevent print of the entire .sh script
 ```
+=== Auto Run .sh at Startup, or at Awake from Sleep
+=== How to Install a New Version of Python
