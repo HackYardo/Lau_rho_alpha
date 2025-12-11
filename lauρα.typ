@@ -107,7 +107,8 @@ This file is the guide to the Lauρα Library. Every chapter or section is a sta
 = Programming Language, Python
 == Define, Histroy, Concept, Philosophy
 == Syntax, Style, Package, Design Pattern
-Base, Standard, Third Party:
+Core, Base, Standard, Third Party:
+- The package that can be used without any prefix.
 - The package that can be used without import or download.
 - The package that can be used with import and without download.
 - The package that can be used with import and download.
@@ -116,6 +117,15 @@ Base, Standard, Third Party:
 = Computer and Open Source Fundamentals
 == Hardware Structure, Software Layer
 == #c(blue,p:5)[Linux], #c(purple)[Git], Regex
+- type englich chars only in the search box of goldendict-ng
+  - compile from source script?
+- auto run .sh at startup or at awake from sleep
+  - gnome or plasma: systemd actually, need permit
+  - systemd: format
+  - init.d: format
+  - rc.d/rc.local: no rc.d but rc0.d?
+  - 3rd lib
+- proper font fallback?
 
 = Markdown
 == #c(green)[CommonMark]

@@ -4,7 +4,14 @@
   height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
 
 = Linux
-Intro, Distro, Install
+== Intro, Distro, Install
+*Operating System (OS) is the platform software that* run on computer, phone, pad, server, car navigator, home automation devices, etc. It *enables user to control hardware*, e.g. turn on/off wifi network, tune sound volume or screen luminance. The usual OS are Apple iOS/Mac, GNU/Linux Debian/Ubuntu/Arch/Fedora/Redhat/OpenSUSE, Google Android, Microsoft Windows. \
+Some OS are ready to use, some are not. To use iOS, just buy their phone; to use Debian visually, you also need desktop software like GNU Gnome or KDE Plasma. As Debian is text only OS, no graphical user interface (GUI). \
+Different OS have different structure and application software usually. So when you choose OS, make sure which OS your team, school or company use.
+/ operating system (OS): example of plantform software; plantform software
+/ planform software: enable user to control hardware
+/ desktop software: make text only OS visual
+/ application software (APP): supply specialized features
 == Path, Folder(Directory), File
 - \~
 - . 
@@ -176,4 +183,9 @@ exec > /dev/null 2>&1
   # prevent print of the entire .sh script
 ```
 === Auto Run .sh at Startup, or at Awake from Sleep
-=== How to Install a New Version of Python
+=== Install a New Version of Python and Pip
+=== Convert a Non-English .html into Text Only
+ctrl h with regex
+```regex
+[a-z</>,;"\?!^#&\|\(\)\{\}\[\]\\+_.=-]|(\n{2,})|(^\s*$)
+```
