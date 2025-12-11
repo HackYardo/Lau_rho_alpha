@@ -76,7 +76,7 @@ rpm
 yum
 pacman
 ```
-=== Packages: install, check, update, remove
+== Packages: install, check, update, remove
 ```sh
 # Git Version Control System
 sudo apt install git-all
@@ -147,14 +147,14 @@ goldendict
     # Sources -> Files -> Add...
     # OK
 ```
-== Bash Shell
+= Bash
 ```sh
 ls -p | grep -v /  # not list folders
 find . -maxdepth 1 -type f  # only list files
 # the above two maybe different
 ```
-== How-to
-=== Prevent .sh Print
+= How-to
+== Prevent .sh Print
 ```sh
 #!/bin/bash
 
@@ -182,10 +182,31 @@ echo "some output" > /dev/null 2>&1
 exec > /dev/null 2>&1
   # prevent print of the entire .sh script
 ```
-=== Auto Run .sh at Startup, or at Awake from Sleep
-=== Install a New Version of Python and Pip
-=== Convert a Non-English .html into Text Only
+== Auto Run .sh at Startup, or at Awake from Sleep
+== Install a New Version of Python and Pip
+== Convert a Non-English .html into Text Only
 ctrl h with regex
 ```regex
 [a-z</>,;"\?!^#&\|\(\)\{\}\[\]\\+_.=-]|(\n{2,})|(^\s*$)
+```
+= Fix Error
+== Permission denied, not in the sudoers file
+```sh
+su
+# password of su
+
+visudo
+# append a line:
+<user_name> ALL=(ALL) ALL
+
+usermod -aG sudo <user_name>
+
+# ctrl d to quit su
+
+sudo apt install apt  # try if fine
+# password of sudo of <user_name>
+
+# su: run command as the root
+# sudo: run command as a superuser
+  # the passwords of su and sudo are set during installing a linux distro
 ```

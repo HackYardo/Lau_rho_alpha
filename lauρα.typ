@@ -129,6 +129,7 @@ Core, Base, Standard, Third Party:
 
 = Markdown
 == #c(green)[CommonMark]
+#figure(image("computing/git_linux_markdown_regex/markdown.pdf"))
 == #c(blue,p:80)[GitHub Markup (GitHub Favoured Markdown)]
 auto-anchor
 == #c(orange)[JupyterBook MyST]
