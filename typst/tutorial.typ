@@ -1,4 +1,5 @@
 #import "template.typ": us_letter
+#import "templateMarkdown.typ": headingf, cm_quote
 
 #show: us_letter.with(
     paperSize: "a4",
@@ -305,18 +306,19 @@ See @t-1 for more.
   [Robert], b, a, b,)
 
 = API <api>
+```typc
 - Func image(_path_, width: _value_)
     - String: "dir/file.jpg"
     - Ascii: 24%, 12cm, 0.6in
 - Func figure(_contentFigure_, caption: _things_)
     - Return: image()
     - Ascii or Block: ascii, [ascii, markup, func, etc]
-- Func bibliography(_path_)
-    - import lib to ref by ```typ @id``` and auto gen a ref section
+- Func bibliography(_path_
+    - import lib to ref by @id and auto gen a ref section
     - String: "dir/cite.yml", "dir/cite.bib"
 - Func cite(_source_)
-    - ```typ #cite(<id>)``` is the same as ```typ @id```
-    - Label: ```typ <id>```, ```typ <glacier-melt>```
+    - cite(<id>) is the same as @id
+    - Label: <id>, <glacier-melt>
 - Func page(paper:_size_, margin:(x:_marginHorizontal_, y: _marginVertical_))
     - String: "a4", "us-letter"
     - Dict: (_key_:_value_)
@@ -429,5 +431,6 @@ See @t-1 for more.
         else if content == [ ] {" "}
         else if content.func() == ref {"_ref_"}
         else {let offending = content; ""}}
+```
 
 #bibliography("cite.yml")

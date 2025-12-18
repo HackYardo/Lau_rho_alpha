@@ -117,8 +117,9 @@ Core, Base, Standard, Third Party:
 = Computer and Open Source Fundamentals
 == Hardware Structure, Software Layer
 == #c(blue,p:5)[Linux], #c(purple)[Git], Regex
-- type englich chars only in the search box of goldendict-ng
-  - compile from source script?
+- dict
+  - nonwill/GoldenDict-OCR: goldendict++, has compiled linux version
+  - goldeidict(vanilla): qtwebkit -> qtwebengine
 - auto run .sh at startup or at awake from sleep
   - gnome or plasma: systemd actually, need permit
   - systemd: format
