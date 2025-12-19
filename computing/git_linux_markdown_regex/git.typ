@@ -3,10 +3,10 @@
 	columns:3,
 	header:[You Need the 3 things: Internet, a GitHub account, Debian/Windows(WSL)/Android(Termux).\ You Know the 3 areas: Work(outside of Git tree), Add(shade of Git tree, buffer zone), Commit(Git tree: log/push/fetch/branch...).],
   footer:[Keep in mind: add/branch/local is light, commit/tag/remote is heavy. So, use more branches to try Git.\
-  Some commands omit details, e.g. git push (origin main), due to its -u option links local to remote.])
-#set par(justify:true)
+  Some commands omit details, e.g. git push [origin main], due to its -u option links local to remote.])
+#set par(justify:true, leading:0.5em, spacing:0.5em)
 #show heading: h => rect(
-	height:1.2em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
+	height:1em, width:100%, stroke:(bottom:0.5pt+luma(220)), inset:0pt, h)
 
 = Keep e-Mail Secret
 `GitHub provides noreply e-mails that can use in SSH or Git. To get one: Settings => Emails => Keep my email address private`
@@ -64,10 +64,10 @@ git clone git@github.com:User/Repo.git
 == Daily Use
 ```sh
 # edit File at local
-git status; git diff
-# when too long:
+git status; git diff  # when too long:
 #   space/b to next/pre page, q to quit
-git add -u; git commit -m 'Info'
+git add -u && git commit -m 'Info'
+#   -m for one line message
 git push; git status; git log -p -1
 # edit File at remote
 git pull origin main  # the same to:
@@ -75,9 +75,10 @@ git fetch && git merge origin/main
 ```
 == Ignore, Delete, Move
 ```sh
-/a.pdf # ignore a.pdf by Repo/.gitignore
-*.pdf  # ig all pdfs
-!b.pdf # not ig b.pdf
+*.pdf  # ig all pdfs by Repo/.gitignore
+*.[ab] # ig all files end with .a or .b
+!a.pdf # not ig a.pdf
+/b.pdf # ig Repo/b.pdf but Repo/A/b.pdf
 A/         # ig the whole A/ folder
 A/*.pdf    # ig all pdfs in A/ but A/B/
 A/**/*.pdf # ig all pdfs in A/
@@ -116,7 +117,7 @@ git push -u origin dev
 git switch main && git merge dev
 git branch -d dev; git push -d dev
 ```
-
+#pagebreak()
 == Classify Commits by Emoji
 - launch
   - *:tada:* introduce few features

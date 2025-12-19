@@ -127,6 +127,11 @@ Core, Base, Standard, Third Party:
   - rc.d/rc.local: no rc.d but rc0.d?
   - 3rd lib
 - proper font fallback?
+- git
+  - termux(wsl?): apt => pkg, no git-all(no gitk, git-gui)
+  - gitignore: more details from 'Pro Git'
+  - stash, squash, cherry-pick, nano rebase to public
+  - link of git, gh, self; header footer info at diff page
 
 = Markdown
 == #c(green)[CommonMark]
@@ -148,7 +153,23 @@ Intro & Install
 === Reserved Word, Function, Package
 === Example: US-Letter
 == As a Programming Language
-
+```typ
+#let heading-numbering = "1.1"
+#set heading(numbering: heading-numbering)
+#show heading: it => {
+  let key = lower(string(it).replace(" ", "-"))
+  return [
+    #it
+    #v(-1em)
+    #figure(
+      kind: "heading",
+      numbering: (..numbers) => numbering(heading-numbering, ..(counter(heading).get())),
+      supplement: "Section",
+    )[]
+    #label(key)
+  ]
+}
+```
 = *Part III: CREATIONs*
 
 = Aerodynamics Trajectory
