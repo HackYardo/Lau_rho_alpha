@@ -6,6 +6,7 @@ import pagehome
 import pageabout   # import readme.md
 import pageconfig  # from ../badukbots import gtpBots
 import pagegame    # from ../badukbots import gtpBots
+import pageplayground
 
 @ui.page('/')
 def page_home() -> None:
@@ -22,6 +23,11 @@ def page_game() -> None:
     pagetheme.menu_buttons()
     pagetheme.plot_buttons()
     pagegame.content()
+
+@ui.page("/playground")
+def page_playground() -> None:
+    pagetheme.menu_buttons()
+    pageplayground.content()
 
 @ui.page("/about")
 def page_about() -> None:

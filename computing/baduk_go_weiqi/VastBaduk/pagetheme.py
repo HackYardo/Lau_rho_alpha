@@ -22,6 +22,6 @@ def menu_buttons() -> None:
         ui.button(icon='home', on_click=lambda: ui.navigate.to('/'))
         ui.button(icon='rule', on_click=lambda: ui.navigate.to("/config"))
         ui.button(icon='sailing', on_click=lambda: ui.navigate.to("/game"))
-        ui.button(icon='insights', on_click=lambda: ui.navigate.to("/config"))
+        ui.button(icon='insights', on_click=lambda: ui.navigate.to("/playground"))
         ui.button(icon='info', on_click=lambda: ui.navigate.to("/about"))
         ui.button(icon='logout', on_click=app_quit)
