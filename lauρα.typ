@@ -199,6 +199,7 @@ Intro & Install
 = *Part IV: IDEAs*
 
 
+= Autoly Combine Chapters into a Book
 = Road as Mirror at Night
 = How Typst Date Function Record Every Time, such as blogs
 = 1000 month icon
@@ -206,6 +207,8 @@ Intro & Install
 = Web Elements to PDF
 avatar, github repo card/mainpage, comment area, gif2frame,
 = thing-time law
+= Shape without Spray
+In diving games, less spray more score. For a rigid object, what shape will get best score?
 = table without `[]`
 = Web-ish cornell note taking template
 auto cross-ref tag, comment area
