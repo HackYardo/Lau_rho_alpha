@@ -8,12 +8,8 @@
 #set page(columns:2)
 #set par(justify:true)
 #set text(size:10pt)
+
 #show "LaTeX": [L#h(-0.3em)#box(move(dy:-0.233em, text(size:0.66em)[A]))#h(-0.1em)T#h(-0.145em)#box(move(dy: 0.233em)[E])#h(-0.135em)X]
-
-// heading_fake(level, heading)
-#let hf(l,h) = {text(1.6em-l*0.2em, weight:"bold")[#h\ ]}
-
-#let grey = luma(135)
 
 #let string(content) = {
   if content == none {""}
@@ -30,10 +26,13 @@
   else if content.func() == ref {"_ref_"}
   else {let offending = content; ""}}
 
-#let c(color, p:100, compose) = {
-  if p == 100 {text(color, compose)}
+#let grey = luma(135)
+
+// chapter_progress(color, progressPercent, compose)
+#let c(color, p:100, x) = {
+  if p == 100 {text(color, x)}
   else {
-    let t = string(compose)
+    let t = string(x)
     let l = int(t.len()*p/100)
 
     if l <= 0 {l = 1}
@@ -42,17 +41,21 @@
     text(color, t.slice(0,l))
     t.slice(l)}}
 
-#place(top+center, float:true, scope:"parent",)[
+// heading_fake(level, heading)
+#let hf(l,h) = text(1.6em-l*0.2em, weight:"bold")[#h\ ]
+
+#let p(align:top+center, x) = place(align, float:true, scope:"parent", x)
+
+
+#p[
 = Lauρα
 _my personal library for the forgotten and the remembered_]
 
-#place(top+left, float:true, scope:"parent",)[
+#p(align:top+left)[
 #hf(2)[Choice]
-Information is in constant need of composing and publishing. Popular ways are:
+Information is in constant need of composing and publishing. Popular ways are:]
 
-#table(
-  columns: 6,
-  align: center,
+#p(table(columns:6,
   table.header([],         [write],[style],[arrange],[view],[print]),
   [paper + pen],           [],[],[no ctrl+c,v,f,h],[],c(red)[via OCR],
   [plain text (.txt)],     [],c(red)[none],c(red)[no ToC],[],[export .pdf],
@@ -61,7 +64,7 @@ Information is in constant need of composing and publishing. Popular ways are:
   [Jekyll, Sphinx (.html)],c(red)[need env],[template],[],[],c(red)[via browser],
   [JupyterBook (myst.md)], [],[template],[template],[need env],[template],
   [LaTeX (.tex $=>$ .pdf)],  [],[],[],[need env],[need env],
-  [Typst (.typ $=>$ .pdf)],  [],[],[],c(blue)[instant],c(blue)[\~50M exe])]
+  [Typst (.typ $=>$ .pdf)],  [],[],[],c(blue)[instant],c(blue)[\~50M exe]))
 
 So I choose Typst. At my first glance, Typst, as a new open source PDF compiler for rocket science, won't replace classic LaTeX in few years. Meanwhile, we really have to say goodbye to Markdown.
 
@@ -80,7 +83,9 @@ This file is the guide to the Lauρα Library. Every chapter or section is a sta
 #outline(title:"Table of Contents", depth:2)
 //#pagebreak()
 
+
 = *Part I: SCIENCE*
+
 
 = Elementary Science: Scope, Method, Conclusion
 
@@ -99,10 +104,15 @@ This file is the guide to the Lauρα Library. Every chapter or section is a sta
 
 = Natural Language, Symbol
 == CEFR, English
+The Common European Framework of Reference for Languages (CEFR) is an international standard for describing language ability. It is used worldwide to describe learners' language skills on a scale from A1 (beginner) to C2 (mastery).
+=== Vocabulary Sheet
+antonym synonym thesaurus ref link color
 == #c(orange)[Greek Letter, Math Symbol]
 == #c(blue,p:50)[Unicode, Emoji]
 
+
 = *Part II: COMPUTING*
+
 
 = Programming Language, Python
 == Define, Histroy, Concept, Philosophy
@@ -166,11 +176,12 @@ Intro & Install
       numbering: (..numbers) => numbering(heading-numbering, ..(counter(heading).get())),
       supplement: "Section",
     )[]
-    #label(key)
-  ]
-}
+    #label(key)]}
 ```
+
+
 = *Part III: CREATIONs*
+
 
 = Aerodynamics Trajectory
 = Natural Object Shape Equation
@@ -183,3 +194,21 @@ Intro & Install
 = Multi-Player Conway Game
 = Quick-Cool Water Cup, Cooking, Fire
 = Garden, Landscape
+
+
+= *Part IV: IDEAs*
+
+
+= Road as Mirror at Night
+= How Typst Date Function Record Every Time, such as blogs
+= 1000 month icon
+= Software as Book
+= Web Elements to PDF
+avatar, github repo card/mainpage, comment area, gif2frame,
+= thing-time law
+= table without `[]`
+= Web-ish cornell note taking template
+auto cross-ref tag, comment area
+= daxing typst document
+= English vocabulary builder template
+= tree/net table of contents of a book
