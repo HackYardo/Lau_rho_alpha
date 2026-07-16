@@ -199,19 +199,28 @@ Intro & Install
 = *Part IV: IDEAs*
 
 
-= Autoly Combine Chapters into a Book
-= Road as Mirror at Night
-= How Typst Date Function Record Every Time, such as blogs
-= 1000 month icon
-= Software as Book
-= Web Elements to PDF
+= Theory
+== Software as Book
+== thing-time law
+
+= Project
+== Diátaxis Typst Document
+a tiny typst tutorial
+clear concise comprehensive
+== 1000 month icon
+show growth on one paper (A4)
+== PDF-Decorating: Web Elements to PDF
 avatar, github repo card/mainpage, comment area, gif2frame,
-= thing-time law
-= Shape without Spray
+== Web-ish cornell note taking template
+auto cross-ref, tag, comment area
+
+= PDF and Typst
+== Autoly Combine Chapters into a Book
+== How Typst Date Function Record Every Time, such as blogs
+== table without `[]`
+== tree/net table of contents of a book
+
+= Idea
+== Road as Mirror at Night
+== Shape without Spray
 In diving games, less spray more score. For a rigid object, what shape will get best score?
-= table without `[]`
-= Web-ish cornell note taking template
-auto cross-ref tag, comment area
-= daxing typst document
-= English vocabulary builder template
-= tree/net table of contents of a book
