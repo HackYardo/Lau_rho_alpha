@@ -75,6 +75,15 @@ nano run.py
 ```
 ```py
 #!/usr/bin/python3
+# shebang to execute script like program
+# must be first line of a script
+
+# or current env python3:
+##!/usr/bin/env python3
+
+# with python3 cli optoins:
+#!/usr/bin/env -S python3 -i
+
 print("You typed: " + input("Please type: "))
 ```
 ```sh
