@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Height Tab Group</title>
+</head>
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px;
+            background: #f5f5f5;}
+        .tab-group {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;}
+        /* Hide radio inputs */
+        .tab-group input[type="radio"] {
+            display: none;}
+        /* Tab labels bar */
+        .tab-labels {
+            height: 50px;
+            display: flex;
+            background: #f0f0f0;
+            border-bottom: 2px solid #ddd;}
+        .tab-labels label {
+            flex: 1;
+            padding: 14px 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.2s;
+            user-select: none;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #ddd;}
+        .tab-labels label:hover {
+            background: #e8e8e8;
+            color: #333;}
+        /* Active tab label */
+        #tab1:checked ~ .tab-labels label[for="tab1"],
+        #tab2:checked ~ .tab-labels label[for="tab2"],
+        #tab3:checked ~ .tab-labels label[for="tab3"] {
+            background: white;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: -2px;}
+        /* Fixed height container - KEY to preventing shaking */
+        .tab-panels {
+            position: relative;
+            height: 300px;
+            overflow-y: scroll;
+            scrollbar-gutter: stable;}
+        /* All panels occupy same space */
+        .tab-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            padding: 24px;
+            line-height: 1.6;
+            overflow: auto;}
+        /* Show active panel */
+        #tab1:checked ~ .tab-panels #panel1,
+        #tab2:checked ~ .tab-panels #panel2,
+        #tab3:checked ~ .tab-panels #panel3 {
+            visibility: visible;
+            opacity: 1;}
+    </style>
+
+    <h2>通向Typst之路</h2>
+    <div class="tab-group">
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
+
+        <div class="tab-labels">
+            <label for="tab1">是什么，用在哪？</label>
+            <label for="tab2">优缺点</label>
+            <label for="tab3">学习、部署、问题等</label>
+        </div>
+
+        <div class="tab-panels">
+            <div class="tab-panel" id="panel1">
+                <h2>Welcome Home</h2>
+                <p>Short content panel. No shaking when switching.</p>
+            </div>
+            <div class="tab-panel" id="panel2">
+                <h2>About Us</h2>
+                <p>This panel has much more content.</p>
+                <p>But the container height stays fixed at 300px.</p>
+                <p>Extra content scrolls internally.</p>
+                <p>Line 5</p><p>Line 6</p><p>Line 7</p>
+                <p>Line 8</p><p>Line 9</p><p>Line 9</p>
+                <p>Line 9</p><p>Line 9</p><p>Line 9</p>
+            </div>
+            <div class="tab-panel" id="panel3">
+                <h2>Get in Touch</h2>
+                <p>Email: hello@example.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

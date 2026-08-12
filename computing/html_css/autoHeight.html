@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  .tab-group {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+  .tab-group input[type="radio"] { display: none; }
+  .tab-labels {
+    display: flex;
+    width: 100%;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;}
+  .tab-labels label {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;}
+  .tab-labels label:hover { background: #eee; }
+
+  .tab-panels {
+    position: relative;
+    width: 100%;}
+  .panel {
+    display: none;
+    padding: 20px;
+    background: #fff;}
+
+  #tab1:checked ~ .tab-panels .panel-1,
+  #tab2:checked ~ .tab-panels .panel-2,
+  #tab3:checked ~ .tab-panels .panel-3 {
+    display: block;
+    animation: fadeIn 0.3s ease;}
+
+  #tab1:checked ~ .tab-labels label[for="tab1"],
+  #tab2:checked ~ .tab-labels label[for="tab2"],
+  #tab3:checked ~ .tab-labels label[for="tab3"] {
+    background: #fff;
+    border-bottom: 3px solid #007bff;
+    color: #007bff;
+    font-weight: bold;}
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }}
+
+  /* 6. 响应式适配：屏幕尺寸/横竖屏 */
+
+  /* 移动端/竖屏：导航垂直排列，节省横向空间 */
+  @media (max-width: 768px), (orientation: portrait) {
+    .tab-labels {
+      flex-direction: column;
+    }
+    .tab-labels label {
+      border-bottom: 1px solid #eee;
+    }
+    .panel {
+      padding: 10px; /* 减小内边距 */
+    }
+  }
+
+  /* 桌面端/横屏：导航水平排列 */
+  @media (min-width: 769px) and (orientation: landscape) {
+    .tab-labels {
+      flex-direction: row;
+    }
+    .tab-labels label {
+      border-bottom: none;
+    }
+  }
+
+  /* 高分辨率适配 */
+  @media (resolution: 2dppx) {
+    .tab-group {
+      border-width: 0.5px;
+    }
+  }
+  .latex-logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2em;
+  }
+  .latex-logo .sup {
+    font-size: 0.7em;
+    vertical-align: super; /* 上标 */
+    margin-left: -0.2em;   /* 向左微调，模拟紧凑感 */
+  }
+  .latex-logo .sub {
+    font-size: 0.7em;
+    vertical-align: sub;   /* 下标 */
+    margin-left: -0.1em;
+  }
+</style>
+</head>
+<body>
+
+<div>
+    时间李烈钧色肌肤累计额累计额是精良设计洛杉矶而里介绍了技术邻近色国家了时间累计额了攻击力及时了解累计额了解拉黑了喝烈酒黑色个ijeoi共聚物ieioja哦ie建瓯ij诶区纪委哦ij而极乐极乐就
+</div>
+
+<div class="tab-group">
+  <input type="radio" name="tabs" id="tab1" checked>
+  <input type="radio" name="tabs" id="tab2">
+  <input type="radio" name="tabs" id="tab3">
+
+  <div class="tab-labels">
+    <label for="tab1">首页 (短)</label>
+    <label for="tab2">产品 (中)</label>
+    <label for="tab3">关于 (长)</label>
+  </div>
+
+  <div class="tab-panels">
+    <div class="panel panel-1">
+      <h2>首页</h2>
+      <p>短内容。容器高度应在此处收缩。</p>
+    </div>
+    <div class="panel panel-2">
+      <h2>产品</h2>
+      <div style="height: 150px; background: #eef;">中等高度内容</div>
+    </div>
+    <div class="panel panel-3">
+      <h2>关于</h2>
+      <div style="height: 400px; background: #efe;">长内容。容器高度应在此处伸展。</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <i class="latex-logo">
+    L<span class="sup">A</span>T<span class="sub">E</span>X
+  </i>
+    时间李烈钧色肌肤累计额累计额是精良设计洛杉矶而里介绍了技术邻近色国家了时间累计额了攻击力及时了解累计额了解拉黑了喝烈酒黑色个ijeoi共聚物ieioja哦ie建瓯ij诶区纪委哦ij而极乐极乐就
+</div>
+
+</body>
+</html>
