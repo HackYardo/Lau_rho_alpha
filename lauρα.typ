@@ -9,7 +9,9 @@
 #set par(justify:true)
 #set text(size:10pt)
 
-#show "LaTeX": [L#h(-0.3em)#box(move(dy:-0.233em, text(size:0.66em)[A]))#h(-0.1em)T#h(-0.145em)#box(move(dy: 0.233em)[E])#h(-0.135em)X]
+#let latex = [L#h(-0.3em)#box(move(dy:-0.233em, text(size:0.66em)[A]))#h(-0.1em)T#h(-0.145em)#box(move(dy: 0.233em)[E])#h(-0.135em)X]
+
+#show "LaTeX": latex
 
 #let string(content) = {
   if content == none {""}
@@ -142,6 +144,7 @@ Core, Base, Standard, Third Party:
   - gitignore: more details from 'Pro Git'
   - stash, squash, cherry-pick, nano rebase to public
   - link of git, gh, self; header footer info at diff page
+  - commit manage: find wrong new one, main branch go back to old one
 
 = Markdown
 == #c(green)[CommonMark]
@@ -203,14 +206,115 @@ Intro & Install
 == Software as Book
 == thing-time law
 
+#colbreak()
+
 = Project
-== Diátaxis Typst Document
-a tiny typst tutorial
-clear concise comprehensive
+```md
+== a-Tiny-Typst-Tutorial: Be Literary Giant Tonight
+
+**Abstract:** Without satellites, the Earth maybe flat. Without Typst, the game changer, one may never compile PDF from plain text. What if Markdown Syntax + LaTeX Quality + Office WYSIWYG? A Tiny Typst Tutorial will show you the case.
+
+**Key words:** latex-typst encyclopedia book-series Diataxis latin-cjk
+
+=== Intro
+
+<details>
+  <summary>One Image Example</summary>
+  #set jjs()
+</details>
+```
+
+Diátaxis Typst Document, clear concise comprehensive, Apache-2.0
+
+$ "Typst" = "Markdown\nSyntax" + #{move(dy:-0.67em, "LaTeX\nQuality")} + "Office\nWYSIWYG" $
+
+=== Usage
+?latest version link of github release
+```sh
+# Download -> Decompress -> Add to PATH
+$ wget xxx.tar.xz  # https://typst.app/open-source/#download
+$ tar -xf xxx.tar.xz
+$ ln -s /path/to/xxx/typst /user/local/bin/typst
+
+# PlainText.typ -> Compile PDF -> View
+$ typst compile aTinyTypstTutorial.typ
+$ firefox *.pdf
+```
+=== Table of Contents
+0. Why Not LaTeX, Markdown, Word, Jupyter, Quorto, Shpinx?
+1. Typst Quickstart (simplified official toturial)
+2. Official Reference
+3. Non-Latin and CJK
+  1. Rome UpCase Bold Italic Underline
+4. DIY with Method and Field
+5. As a Typesetting System
+  0. ref: LaTeX-doc?
+  1. Diff: LaTeX, Markdown, Word, ...
+  2. [IMPORTANT] font, input method
+  3. markup/code/math mode and exchange
+6. As a Programming Language
+  0. ref: python-doc
+  1. Type and Flow
+  2. Function and Module
+  3. All Built-in Words
+  4. Test
+  5. Benchmark
+  6. Out of Memory
+=== outer ref
+latex alternative, open source, instant preview, binary cli or online web app
+
 == 1000 month icon
 show growth on one paper (A4)
 == PDF-Decorating: Web Elements to PDF
+event: click, hold, drag, hover, scroll, swipe, type, combine keys
+interact:
+- navigate: menu, link, button, toggle, pop-up
+- form: type box, select dropdown
+- media: video, audio clip, image gallery
+- respond: slider, carousel, infographic
+- feedback: confirmation, error message
+- 3d hover or scroll effect
+- fuzzy, fade
+- social media share
+- part page, block area
+- quizze
+- game
+- tutorial
+- data collect and statistics, page view, click path
+- survey
+- chatbot
+- customer support
+- user gened content
+- product demo and try-on
+- playful element: bubble, stress ball, spring
+- seamless animation and eye-catching visuals
+- webpage interaction pattern: F, L
+- website interaction flow, user move through
+- immerse
+- moving object in (background) video
+- left/right scroll
+- music wave bar par
+- geographical map
+- like or dislike
+- poll
+- sign up/in, purchase
+chat room with scientist and conquer concept city and field kingdom
+
 avatar, github repo card/mainpage, comment area, gif2frame,
+music/movie player buttons/pars, search box, editor card
+
+website:
+- social media app: profile, chat room, post column
+- blog, news
+- e-learning portal
+- storytelling site
+- online forum
+- git repo host
+- video website
+- photo website
+- music website
+- shopping mall
+
 == Web-ish cornell note taking template
 auto cross-ref, tag, comment area
 
@@ -218,7 +322,36 @@ auto cross-ref, tag, comment area
 == Autoly Combine Chapters into a Book
 == How Typst Date Function Record Every Time, such as blogs
 == table without `[]`
+```typ
+#let pd-table(it) = {
+  vec = regex(it).split
+  t = table()
+  for elm in vec {
+    t.push(elm)}
+  return t}
+```
 == tree/net table of contents of a book
+== test: png2gif to see diff
+== list item symbol axis
+```py
+v = typst.version
+if v in (0.12.0, 0.14.*),
+else if v >= 0.15.0
+else  # v < 0.12.0
+```
+or show item symbol as none?
+== html fold block in typst/universe
+```md
+---
+<details>
+  <summary>fold</summary>
+  block
+</details>
+
+---
+```
+
+$ "Typst" = "Markdown\nSyntax" + #{move(dy:-0.67em, "LaTeX\nQuality")} + "Office\nWYSIWYG" $
 
 = Idea
 == Road as Mirror at Night
