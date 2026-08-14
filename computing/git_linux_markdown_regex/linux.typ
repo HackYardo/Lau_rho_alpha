@@ -8,7 +8,7 @@
 == Intro, Distro, Install
 *Operating System (OS) is the platform software that* run on computer, phone, pad, server, car navigator, home automation devices, etc. It *enables user to control hardware*, e.g. turn on/off wifi network, tune sound volume or screen luminance. The usual OS are Apple iOS/Mac, GNU/Linux Debian/Ubuntu/Arch/Fedora/Redhat/OpenSUSE, Google Android, Microsoft Windows.
 
-#table(columns:,
+#table(columns:5,
   [OS], [Desktop/Mobile], [Speed], [Users], [Price],
   [Apple iOS/Mac], [DM], [1], [design], [])
 

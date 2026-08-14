@@ -16,3 +16,10 @@ ffmpeg -i demo.mp4 -vf "crop=160:90:100:100"
 / -vf: apply a filter
 / scale: the aspect ratio filter
 / crop: the crop filter
+
+= ImageMagick
+== Compare
+== Reduce
+```sh
+magick Demo.png -quantize GRAY +dither -colors 8 Demo-gray8.png
+```

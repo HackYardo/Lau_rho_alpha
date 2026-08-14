@@ -209,14 +209,14 @@ Intro & Install
 #colbreak()
 
 = Project
-```md
 == a-Tiny-Typst-Tutorial: Be Literary Giant Tonight
+```md
 
 **Abstract:** Without satellites, the Earth maybe flat. Without Typst, the game changer, one may never compile PDF from plain text. What if Markdown Syntax + LaTeX Quality + Office WYSIWYG? A Tiny Typst Tutorial will show you the case.
 
 **Key words:** latex-typst encyclopedia book-series Diataxis latin-cjk
 
-=== Intro
+## Intro
 
 <details>
   <summary>One Image Example</summary>
@@ -265,6 +265,7 @@ latex alternative, open source, instant preview, binary cli or online web app
 
 == 1000 month icon
 show growth on one paper (A4)
+
 == PDF-Decorating: Web Elements to PDF
 event: click, hold, drag, hover, scroll, swipe, type, combine keys
 interact:
@@ -318,7 +319,24 @@ website:
 == Web-ish cornell note taking template
 auto cross-ref, tag, comment area
 
+== bookmark-kabob
+#quote(block:true)[
+  Bold and italic heading styles in PDF readers' bookmarks.]
+*Key words:* book, utility, clarify, outline, toc, typst\
+Task list:
+1. less image file size
+2. check then push to remotes, topic, discribe
+3. git sparse clone typst/packages/docs, check
+  - whic in github remote, typst/packages, typst universe, typst import
+4. fork to pr
+  - github re-fork, git sparse clone typst/packages/packages/preview
+  - git branch bookmark-kabob:0.1.0, github web browser pr
+5. wait code review, published, forum post [ANN]
+
 = PDF and Typst
+== Typst test gotcha, lib.typ != preview/pkg
+which means test pkg online \@preview and offline lib.typ are different, and sys.version < version(0.6.0) is not need to test
+== auto test versions of Typst via bash.sh and imagemagick
 == Autoly Combine Chapters into a Book
 == How Typst Date Function Record Every Time, such as blogs
 == table without `[]`
@@ -332,15 +350,24 @@ auto cross-ref, tag, comment area
 ```
 == tree/net table of contents of a book
 == test: png2gif to see diff
-== list item symbol axis
-```py
-v = typst.version
-if v in (0.12.0, 0.14.*),
-else if v >= 0.15.0
-else  # v < 0.12.0
+ideal: left-diff-black-white + right-overlap-gif
+== how compatible with versions of Typst
+```typc
+let V = sys.version  // compiler version
+let v = version  // std function rename
+if V < v(0.12.0) {
+  "compatible with older Typst"}
+else if V in (v(0.15.0), v(0.15.1)) {
+  "compatible with specific Typst"}
+else if V > v(0.15.1) {
+  "compatible with future Typst"}
+else {
+  "compatible with other Typst"}
 ```
-or show item symbol as none?
-== html fold block in typst/universe
+== show enum() list() markers as none?
+that's what similar pkgs do in typst universe,
+or re-construct by field and method of enum,list
+== html fold block in typst universe
 ```md
 ---
 <details>
@@ -351,7 +378,7 @@ or show item symbol as none?
 ---
 ```
 
-$ "Typst" = "Markdown\nSyntax" + #{move(dy:-0.67em, "LaTeX\nQuality")} + "Office\nWYSIWYG" $
+#colbreak()
 
 = Idea
 == Road as Mirror at Night
