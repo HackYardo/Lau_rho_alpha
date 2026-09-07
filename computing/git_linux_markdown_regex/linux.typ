@@ -100,7 +100,7 @@ cd ~/
 ls -ashbl
 du -hd2 --exclude=*.pdf
 ```
-== Source Mirror of Packages
+== Source Mirror of Packages, Android Layer
 ```sh
 cd /etc/apt/
 cat sources.list
@@ -113,6 +113,20 @@ dnf  # apt of CentOS, Fedora, RHEL
 rpm
 yum
 pacman
+```
+=== Android, Waydroid, Debian Backports
+```sh
+# add a new file /etc/apt/sources.list.d/debian-backports.sources
+Types: deb deb-src
+URIs: http://deb.debian.org/debian
+Suites: trixie-backports
+Components: main
+Enabled: yes
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# run commands
+sudo apt update
+sudo apt install waydroid
 ```
 == Packages: install, check, update, remove
 ```sh

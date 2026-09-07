@@ -48,7 +48,6 @@
 
 #let p(align:top+center, x) = place(align, float:true, scope:"parent", x)
 
-
 #p[
 = Lauρα
 _my personal library for the forgotten and the remembered_]
@@ -319,21 +318,54 @@ website:
 == Web-ish cornell note taking template
 auto cross-ref, tag, comment area
 
-== bookmark-kabob
-#quote(block:true)[
-  Bold and italic heading styles in PDF readers' bookmarks.]
-*Key words:* book, utility, clarify, outline, toc, typst\
-Task list:
-1. less image file size
-2. check then push to remotes, topic, discribe
-3. git sparse clone typst/packages/docs, check
-  - whic in github remote, typst/packages, typst universe, typst import
-4. fork to pr
-  - github re-fork, git sparse clone typst/packages/packages/preview
-  - git branch bookmark-kabob:0.1.0, github web browser pr
-5. wait code review, published, forum post [ANN]
+== tings to do
+1. git cheat-sheet update: squash, stash and cherry-pick
+2. github topic summary: ui css
+
+UI (> 15k stars, - curated list, - AI tool):
+NAME                                         DESCRIPTION
+react/react                                  The library for web and native user interfaces.                                                                                                    
+shadcn-ui/ui                                 A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.
+storybookjs/storybook                        Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation                                      
+sveltejs/svelte                              web development for the rest of us                                                                                                                 
+ocornut/imgui                                Dear ImGui: Bloat-free Graphical User interface for C++ with minimal dependencies                                                                  
+Semantic-Org/Semantic-UI                     Semantic is a UI component framework based around useful principles from natural language.                                                         
+vuetifyjs/vuetify                            Vue Component Framework                                                                                                                         
+DioxusLabs/dioxus                            Fullstack app framework for web, desktop, and mobile.                                                                                              
+react-native-elements/react-native-elements  Cross-Platform React Native UI Toolkit                                                                                                             
+slint-ui/slint                               Slint is an open-source declarative GUI toolkit to build native user interfaces for Rust, C++, JavaScript, or Python apps.                         
+palantir/blueprint                           A React-based UI toolkit for the web                                                                                                               
+vueComponent/ant-design-vue                  An enterprise-class UI components based on Ant Design and Vue. 🐜                                                                               
+JetBrains/compose-multiplatform              Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.           
+radix-ui/primitives                          Radix Primitives is an open-source UI component library for building high-quality, accessible design systems and web apps. Maintained by @workos.  
+kivy/kivy                                    Open source UI framework written in Python, running on Windows, Linux, macOS, Android and iOS                                                      
+rjsf-team/react-jsonschema-form              A React component for building Web forms from JSON Schema.                                                                                         
+hoffstadt/DearPyGui                          Dear PyGui: A fast and powerful Graphical User Interface Toolkit for Python with minimal dependencies                                              
+
+CSS (> 25k stars, - tutorial, - collection, - AI, - animation - build tool):
+NAME                                        DESCRIPTION                                                                                                      
+twbs/bootstrap                              The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+electron/electron                           :electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS                                      
+tailwindlabs/tailwindcss                    A utility-first CSS framework for rapid UI development.                                                          
+FortAwesome/Font-Awesome                    The iconic SVG, font, and CSS toolkit                                                                            
+h5bp/html5-boilerplate                      A professional front-end template for building fast, robust, and adaptable web apps or sites.                    
+necolas/normalize.css                       A modern alternative to CSS resets                                                                               
+jgthms/bulma                                Modern CSS framework based on Flexbox                                                                            
+ColorlibHQ/AdminLTE                         AdminLTE - Free admin dashboard template based on Bootstrap 5                                                    
+vercel/hyper                                A terminal built on web technologies                                                                             
+saadeghi/daisyui                            The most popular, free and open-source Tailwind CSS component library                                         
+tabler/tabler                               Tabler is free and open-source HTML Dashboard UI Kit built on Bootstrap                                          
+styled-components/styled-components         Fast, expressive styling for React. Server components, client components, streaming SSR, React Native—one API.   
+Dogfalo/materialize                         Materialize, a CSS Framework based on Material Design                                                            
+DioxusLabs/dioxus                           Fullstack app framework for web, desktop, and mobile.                                                            
+
+3. github topic use goal summary and apply
 
 = PDF and Typst
+== raw code block: two classes
+1. script with line number, line highlight, align comment, file name, programming language, tab-space, code fold, copy button
+2. shell with '\$' symbol, command & output, terminal name, console language, tab-complete ctrl-c keyboard key, copy command only
+
 == Typst test gotcha, lib.typ != preview/pkg
 which means test pkg online \@preview and offline lib.typ are different, and sys.version < version(0.6.0) is not need to test
 == auto test versions of Typst via bash.sh and imagemagick
